@@ -51,7 +51,7 @@
 
 //  console.log(listaDeTarefas)
 
-//  //d
+// //  //d
 // const tarefaRealizada = prompt(`Digite o número de uma tarefa que você já realizou
 // 0. ${tarefa1}
 // 1. ${tarefa2}
@@ -62,8 +62,20 @@
 
  //----------DESAFIOS----------------------
 
+//1  eu demorei um milhão de anos pra descobri como me livrar do espaço em branco do meio
+//  const fraseUser = prompt('Digite uma frase');
+//   const killSpace = fraseUser.replace(/\s+/g, "")
+//   let virarArray = Array.from(killSpace);
 
- const fraseUser = prompt("Digite uma frase")
- const virarArray = Array.from(fraseUser)
- const semEspaço = virarArray
- console.log(virarArray)
+//   console.log(virarArray)
+
+
+// 2 imprime o indice e o comprimento do array
+
+// const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+// let indice = frutas.indexOf("Abacaxi")
+// const frutasComprimento = frutas.length
+
+// console.log(indice, frutasComprimento)
+
+ 
