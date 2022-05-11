@@ -18,7 +18,7 @@ const soma = primeiroNumero + segundoNumero
  //--------EXERCICIOS DE ESCRITA DE CODIGO-------------
  //EXERCICIO 1
  /*let idadeUsuario = Number(prompt("Qual é a sua idade"))
- let idadeAmiga = Number(prompt("Qual é a idade da sua melhor amiga"))
+ let idadeAmiga = Number(prompt("Qual é a idade da sua melhor amiga?"))
 
   let idadeMaior = idadeUsuario > idadeAmiga
   let diferenca = idadeUsuario - idadeAmiga
