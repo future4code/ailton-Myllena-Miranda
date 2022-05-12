@@ -54,7 +54,7 @@
 
 // console.log(somar(2,3))
 
-// //b.
+//b.
 // const booleano = (a, b) => a >= b
 
 // console.log(booleano(2, 3))
@@ -79,16 +79,42 @@
 
 //----Questão 3-----
 
-const somar = (a, b) => a + b
-const diferenca = (a,b) => a - b
-const multiplicação = (a,b) => a * b 
-const divisão = (a, b) => a / b
+// const somar = (a, b) => a + b
+// const diferenca = (a,b) => a - b
+// const multiplicação = (a,b) => a * b 
+// const divisão = (a, b) => a / b
 
-const numero1 = Number(prompt("Insira um número"))
-const numero2 = Number(prompt("Insira outro número"))
+// const numero1 = Number(prompt("Insira um número"))
+// const numero2 = Number(prompt("Insira outro número"))
 
-console.log(`Números inseridos: ${numero1} e ${numero2}
-Soma: ${somar(numero1, numero2)}
-Diferença: ${diferenca(numero1,numero2)}
-Multiplicação: ${multiplicação(numero1, numero2)}
-Divisão: ${divisão(numero1,numero2)}`)
+// console.log(`Números inseridos: ${numero1} e ${numero2}
+// Soma: ${somar(numero1, numero2)}
+// Diferença: ${diferenca(numero1,numero2)}
+// Multiplicação: ${multiplicação(numero1, numero2)}
+// Divisão: ${divisão(numero1,numero2)}`)
+
+//-------------DESAFIO--------------
+//1.a) Escreva uma arrow function que recebe um parâmetro e imprime no console esse parâmetro
+ 
+
+// const imprimeValor = valor => {
+//      return valor
+//  }
+// console.log(imprimeValor(4)) //deu certo
+
+// //b) Escreva outra arrow function que recebe dois valores como parâmetros mas nenhum retorno.
+//  //Faça a soma entre esses valores e chame a sua primeira função mandando este resultado da soma 
+//  //como entrada para imprimi-lo
+
+ 
+//  const soma = (a,b) => a + b
+ 
+// console.log(Number(imprimeValor(soma (11,7)))) // rolou
+
+
+//2
+//  function pitagoras (a, b){
+//      let hip = Math.sqrt((a**2) + (b**2))
+//      return hip
+//  }
+// console.log(pitagoras(10,20))  //DEU CERTO IHUUU
