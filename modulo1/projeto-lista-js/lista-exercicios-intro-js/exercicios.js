@@ -80,79 +80,97 @@
 // imprimeTresCoresFavoritas()
 
 // EXERCÍCIO 06
-function retornaStringEmMaiuscula(string) {
-  // implemente sua lógica aqui
-return string.toUpperCase()
-}
-retornaStringEmMaiuscula()
+// function retornaStringEmMaiuscula(string) {
+//   // implemente sua lógica aqui
+// return string.toUpperCase()
+// }
+// retornaStringEmMaiuscula()
 
-// EXERCÍCIO 07
-function calculaIngressosEspetaculo(custo, valorIngresso) {
-  // implemente sua lógica aqui
-let venda = custo / valorIngresso
+// // EXERCÍCIO 07
+// function calculaIngressosEspetaculo(custo, valorIngresso) {
+//   // implemente sua lógica aqui
+// let venda = custo / valorIngresso
 
-return venda
-}
-calculaIngressosEspetaculo()
+// return venda
+// }
+// calculaIngressosEspetaculo()
 
-// EXERCÍCIO 08
-function checaStringsMesmoTamanho(string1, string2) {
-  // implemente sua lógica aqui
-let booleano = string1.length === string2.length
+// // EXERCÍCIO 08
+// function checaStringsMesmoTamanho(string1, string2) {
+//   // implemente sua lógica aqui
+// let booleano = string1.length === string2.length
 
-return booleano
-}
-checaStringsMesmoTamanho
-// EXERCÍCIO 09
-function retornaPrimeiroElemento(array) {
-  // implemente sua lógica aqui
-return array[0]
-}
-retornaPrimeiroElemento()
+// return booleano
+// }
+// checaStringsMesmoTamanho
+// // EXERCÍCIO 09
+// function retornaPrimeiroElemento(array) {
+//   // implemente sua lógica aqui
+// return array[0]
+// }
+// retornaPrimeiroElemento()
 
-// EXERCÍCIO 10
-function retornaUltimoElemento(array) {
-  // implemente sua lógica aqui
-  let comprimento = array.length
-  let ultimoArray = comprimento - 1
-  let utimoElement = array[ultimoArray]
-  return  utimoElement
-}
-retornaUltimoElemento()
+// // EXERCÍCIO 10
+// function retornaUltimoElemento(array) {
+//   // implemente sua lógica aqui
+//   let comprimento = array.length
+//   let ultimoArray = comprimento - 1
+//   let utimoElement = array[ultimoArray]
+//   return  utimoElement
+// }
+// retornaUltimoElemento()
 
-// EXERCÍCIO 11
-function trocaPrimeiroEUltimo(array) {
-  // implemente sua lógica aqui
-  const armazenaPrimeiro = array[0]
-  let ultimoElemnto = array.length-1
-  array[0] = array[ultimoElemnto]
-  array[ultimoElemnto] = armazenaPrimeiro
-  return array
-}
-trocaPrimeiroEUltimo()
+// // EXERCÍCIO 11
+// function trocaPrimeiroEUltimo(array) {
+//   // implemente sua lógica aqui
+//   const armazenaPrimeiro = array[0]
+//   let ultimoElemnto = array.length-1
+//   array[0] = array[ultimoElemnto]
+//   array[ultimoElemnto] = armazenaPrimeiro
+//   return array
+// }
+// trocaPrimeiroEUltimo()
 
-// EXERCÍCIO 12
-function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  // implemente sua lógica aqui
-   return string1.toLowerCase().includes(string2.toLowerCase()) 
+// // EXERCÍCIO 12
+// function checaIgualdadeDesconsiderandoCase(string1, string2) {
+//   // implemente sua lógica aqui
+//    return string1.toLowerCase().includes(string2.toLowerCase()) 
 
-}
-checaIgualdadeDesconsiderandoCase()
+// }
+// checaIgualdadeDesconsiderandoCase()
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+const anoAtual = Number(prompt(`Você precisa renovar a sua carteira?
+Informe o ano atual:`))
+const anoNascimento = Number(prompt("Informe seu ano de nascimento:"))
+const anoEmissaoCarteira = Number(prompt("Qual foi o ano de emissão da sua carteira de identidade?"))
+let simOuNaoRenovacao = (anoAtual - anoNascimento) <= 20 && (anoAtual - anoEmissaoCarteira) >= 5 || (anoAtual- anoNascimento) > 20 && 
+(anoAtual- anoNascimento)<= 50 && (anoAtual - anoEmissaoCarteira) >=  10 || (anoAtual- anoNascimento) > 50 && (anoAtual - anoEmissaoCarteira) >= 15
 
+return console.log(simOuNaoRenovacao)
 }
+checaRenovacaoRG()
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+let anoBissexto1 = ano % 4 === 0 && ano % 100 !== 0 || ano % 400 === 0 
 
+return anoBissexto1
 }
+checaAnoBissexto()
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+const idade = prompt(`Responda as perguntas utilizando 'sim' ou 'não'
+Você tem mais de 18 anos`)
+const ensinoMedio = prompt("Você possui ensino médio completo?")
+const disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+let validade = idade.includes("sim") && ensinoMedio.includes("sim") && disponibilidade.includes("sim")
 
+return console.log(validade)
 }
+checaValidadeInscricaoLabenu()
