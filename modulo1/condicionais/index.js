@@ -80,7 +80,7 @@
 // vou_ao_filme()
 
 //-----DESAFIOS------
-//1 modificação da anterior
+// //1 modificação da anterior
 // function vou_ao_filme (){
 //     const informacoes ={
 //         tipoFilme: prompt("Qual é o gênero do filme que iremos assistir?"),
@@ -253,6 +253,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 } else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "SF" && infoUser.categoria === 1){
     const ingressos = infoUser.quantidade * 1320
+    const valorIngressoDol = 1320
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -264,6 +265,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 } else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "SF" && infoUser.categoria === 2){
     const ingressos = infoUser.quantidade * 880
+    const valorIngressoDol = 880
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -275,6 +277,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 }else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "SF" && infoUser.categoria === 3){
     const ingressos = infoUser.quantidade * 550
+    const valorIngressoDol = 550
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -286,6 +289,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 } else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "SF" && infoUser.categoria === 4){
     const ingressos = infoUser.quantidade * 220
+    const valorIngressoDol = 220
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -297,6 +301,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 } else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "DT" && infoUser.categoria === 1){
     const ingressos = infoUser.quantidade * 660
+    const valorIngressoDol = 660
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -308,6 +313,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 }else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "DT" && infoUser.categoria === 2){
     const ingressos = infoUser.quantidade * 440
+    const valorIngressoDol = 440
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -319,6 +325,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 }else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "DT" && infoUser.categoria === 3){
     const ingressos = infoUser.quantidade * 330
+    const valorIngressoDol = 330
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -330,6 +337,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 } else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "DT" && infoUser.categoria === 4){
     const ingressos = infoUser.quantidade * 170
+    const valorIngressoDol = 170
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -341,6 +349,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 }else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "FI" && infoUser.categoria === 1){
     const ingressos = infoUser.quantidade * 1980
+    const valorIngressoDol = 1980
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -352,6 +361,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 } else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "FI" && infoUser.categoria === 2){
     const ingressos = infoUser.quantidade * 1320
+    const valorIngressoDol = 1320
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -363,6 +373,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 }else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "FI" && infoUser.categoria === 3){
     const ingressos = infoUser.quantidade * 880
+    const valorIngressoDol = 880
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
@@ -374,6 +385,7 @@ Valor do Ingresso: R$${valorIngressoDol}
 Valor total: R$${ingressos}`) 
 }else if(infoUser.tipoJogo === "DO" && infoUser.etapaJogo === "FI" && infoUser.categoria === 4){
     const ingressos = infoUser.quantidade * 330
+    const valorIngressoDol = 330  
     return console.log(`---Dados da compra---
 Nome do cliente: ${infoUser.nomeCompleto}
 Tipo de Jogo: ${infoUser.tipoJogo}
