@@ -108,3 +108,52 @@
 O valor menor é: ${menor}`)
   }
    menorEMaior(arrayOriginal)
+
+   
+   //----Desafio----
+//1.
+  //  function desafio() {
+  //   let numeroParaAdivinhar = Number(prompt("Infome um número"))
+  //   let arrayVazia = []
+  
+  //   for(let i = 0; i < numeroParaAdivinhar; i++){
+  //     let adivinhe = Number(prompt("Adivinhe o número"))
+  //     if(numeroParaAdivinhar > adivinhe){
+  //     arrayVazia.push(adivinhe)
+  //    console.log(`O número chutado foi: ${adivinhe}
+  // ERROUUUU, é maior`)
+  // } else if (numeroParaAdivinhar < adivinhe){
+  //   arrayVazia.push(adivinhe)
+  //     console.log(`O número chutado foi: ${adivinhe}
+  // ERROUUUUU, é menor`)
+  // } else{
+  //     return console.log(`Parabéns! Você acertou, o número é ${numeroParaAdivinhar}`) 
+  // }
+  // }
+  // return arrayVazia
+  // }
+  // desafio()
+  
+  //2. //foi tranquilo mudar
+
+  function desafio() {
+    let numeroParaAdivinhar = Math.floor((Math.random() * 10) + 1)
+    let arrayVazia = []
+  
+    for(let i = 0; i < numeroParaAdivinhar; i++){
+      let adivinhe = Number(prompt("Adivinhe o número"))
+      if(numeroParaAdivinhar > adivinhe){
+      arrayVazia.push(adivinhe)
+     console.log(`O número chutado foi: ${adivinhe}
+  ERROUUUU, é maior`)
+  } else if (numeroParaAdivinhar < adivinhe){
+    arrayVazia.push(adivinhe)
+      console.log(`O número chutado foi: ${adivinhe}
+  ERROUUUUU, é menor`)
+  } else{
+      return console.log(`Parabéns! Você acertou, o número é ${numeroParaAdivinhar}`) 
+  }
+  }
+  return arrayVazia
+  }
+  desafio()
