@@ -45,18 +45,18 @@
 
  //2
 
- const produtos = [
-    { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
-    { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
-    { nome: "Veja Multiuso", categoria: "Limpeza", preco: 12.6 },
-    { nome: "Dúzia de Banana", categoria: "Hortifruti", preco: 5.7 },
-    { nome: "Leite", categoria: "Bebidas", preco: 2.99 },
-    { nome: "Cândida", categoria: "Limpeza", preco: 3.30 },
-    { nome: "Detergente Ypê", categoria: "Limpeza", preco: 2.2 },
-    { nome: "Vinho Tinto", categoria: "Bebidas", preco: 55 },
-    { nome: "Berinjela kg", categoria: "Hortifruti", preco: 8.99 },
-    { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
- ]
+//  const produtos = [
+//     { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
+//     { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
+//     { nome: "Veja Multiuso", categoria: "Limpeza", preco: 12.6 },
+//     { nome: "Dúzia de Banana", categoria: "Hortifruti", preco: 5.7 },
+//     { nome: "Leite", categoria: "Bebidas", preco: 2.99 },
+//     { nome: "Cândida", categoria: "Limpeza", preco: 3.30 },
+//     { nome: "Detergente Ypê", categoria: "Limpeza", preco: 2.2 },
+//     { nome: "Vinho Tinto", categoria: "Bebidas", preco: 55 },
+//     { nome: "Berinjela kg", categoria: "Hortifruti", preco: 8.99 },
+//     { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
+//  ]
 
  //a.
 //  const apenasNome = produtos.map((nome) => {
@@ -67,10 +67,10 @@
 
  //b.
 
- const arrayComDesconto = produtos.map((itens) =>{
-     return {nome: itens.nome, preço: (itens.preco*0.95).toFixed(2)}
- })
- console.log(arrayComDesconto)
+//  const arrayComDesconto = produtos.map((itens) =>{
+//      return {nome: itens.nome, preço: (itens.preco*0.95).toFixed(2)}
+//  })
+//  console.log(arrayComDesconto)
 
 
 
@@ -98,3 +98,33 @@
 //     return ` Compre ${item.nome} por ${item.preco}`
 // })
 // console.log(arrayYpe)
+
+//DESAFIOS
+//1 a
+const pokemons = [
+    { nome: "Bulbasaur", tipo: "grama" },
+    { nome: "Bellsprout", tipo: "grama" },
+    { nome: "Charmander", tipo: "fogo" },
+    { nome: "Vulpix", tipo: "fogo" },
+    { nome: "Squirtle", tipo: "água" },
+    { nome: "Psyduck", tipo: "água" },
+ ]
+
+ const ordemAlfabetica = pokemons.map((pokemon) => {
+     return pokemon.nome
+ }).sort()
+ console.log(ordemAlfabetica)
+
+ //b.
+ const tipoPokemon = pokemons.map((pokemon) =>{
+        return pokemon.tipo
+        })
+ console.log(tipoPokemon)
+ 
+function tiraItemRepetidoArray (array){ 
+ let arrayNova = [...new Set(array)]
+ return arrayNova
+}
+ console.log(tiraItemRepetidoArray(tipoPokemon))
+
+
