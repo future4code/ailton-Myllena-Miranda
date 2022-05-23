@@ -144,8 +144,16 @@ return novaPessoa
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
+    const autorizadas = []
+ for (itens of pessoas){
+     if(itens.idade > 14 && itens.idade < 60 && itens.altura >= 1.5){
+         autorizadas.push(itens)
+     }
+ }
+ return autorizadas
+ }
    
-}
+
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
