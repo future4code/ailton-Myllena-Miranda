@@ -35,12 +35,19 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    let novaArray = []
+    for(numero of array){
+        if(numero % 2 === 0){
+            numero = numero**2
+       novaArray.push(numero)
+        }
+  }
+   return novaArray
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    
 }
 
 // EXERCÍCIO 07
