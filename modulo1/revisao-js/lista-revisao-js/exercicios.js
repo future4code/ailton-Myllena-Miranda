@@ -170,12 +170,20 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
+let saldoAtual = contas.map((itens, indice,array)=>{
+    
+})
 
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    consultas.sort(function(item,indice){
+        let a = item.nome.toUpperCase()
+        b = indice.nome.toUpperCase()
+        return a ==b? 0 : a > b ? 1 : -1
+    })
+  return consultas
 }
 
 // EXERCÍCIO 15B
