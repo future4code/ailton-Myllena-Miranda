@@ -24,7 +24,13 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    let novaArray = []
+  for(numero of array){
+      if(numero % 2 === 0){
+     novaArray.push(numero)
+      }
+ }
+ return novaArray
 }
 
 // EXERCÍCIO 05
