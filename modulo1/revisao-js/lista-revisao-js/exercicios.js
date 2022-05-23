@@ -74,14 +74,20 @@ if(maior % menor === 0){
     divisivelMenor = false
 }
   let diferenca1 = maior - menor 
-  
+
   return{maiorNumero:maior, maiorDivisivelPorMenor:divisivelMenor, diferenca:diferenca1} 
 }
 
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    let pares = [];
+   for(let i = 0; pares.length < n; i++){
+       if( i % 2 === 0){
+           pares.push(i)
+   }
+  }
+return pares
 }
 
 // EXERCÍCIO 09
