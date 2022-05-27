@@ -1,0 +1,172 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+  
+}
+
+input {
+    height: 35px;
+    width: 400px;
+    border-bottom-color: solid 1px black;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 100px;
+}
+
+#first-child {
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 13vw;
+    height: 10vh;
+    margin-left: 620px;
+    margin-top: 50px;
+    border: 4px black;
+    
+}
+
+div img {
+    background: white;
+}
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    width: 260px;
+    height: 40px;
+    margin-top:  0;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    border: #fe7e02;
+    margin-top: -200px;
+    margin-bottom: 80px;
+
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    height:335px;
+    text-align: center;
+    width: 100vw; 
+   
+    border: 8px black;
+}
+
+
+.icone {
+    height: 15px;
+    width: 15px;
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white; 
+    padding-top: 0.75px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#container-de-descricao>ol {   /*  as frases com lista ordenada*/
+    padding: 4px 600px;
+    margin-bottom: 10px;
+    margin-top:  14px;
+}
+
+#container-para-comprar {
+    background-color: #e7eb90;
+    padding-bottom:37px ;
+}
+
+#container-para-comprar>p {
+    color: #c44f00;
+    padding: 64px 0;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+    
+}
+
+table {
+    width: 60%;
+    position: relative;
+  margin-left: 330px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: block;
+    position: relative;
+    margin-left: 700px;
+    margin-top: 136px;
+  }
+   
+
+
+#back-button:hover {
+    background-color: #635a3d;
+color: blue;
+}
