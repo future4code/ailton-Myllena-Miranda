@@ -1,0 +1,137 @@
+/* tool bar */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe3d5;
+}
+
+/*  MEU HEADER*/
+.logo{
+    width: 140px;
+    cursor: pointer;
+    margin-right: auto;
+    
+}
+
+li, a, button{
+    font-family: Helvetica,sans-serif ;
+    font-weight: 550;
+    font-size: 16px;
+    color: #946a56;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 10%;
+    position: sticky;
+}
+
+.nav-links{
+    list-style: none;
+}
+ .nav-links li{
+     display: inline-block;
+     padding: 0 20px;
+ }
+
+ .nav-links li a{
+    transition: all 0.3s ease 0s; 
+ }
+
+ .nav-links li a:hover{
+    color: #e1bee7;
+ }
+
+ button {
+     margin-left: 20px ;
+     padding: 9px 25px;
+     background-color: #946a56;
+     color: white;
+     border: none;
+     border-radius: 50px;
+     cursor: pointer;
+     transition: all 0.3s ease 0s; 
+ }
+
+ button:hover{
+    background-color: #e1bee7;
+    
+ }
+
+
+ /*  MEU about*/
+
+ #corzinha{
+     background-color: #946a56 ;
+     height: 450px;
+     width: 100%;
+     margin-top: 80px;
+     position: static;
+ 
+ }
+
+.name{
+    position: absolute;
+     margin-left: 5%;
+     margin-top: 8%;
+     font-size: 50px;
+     background-color: none;
+     background-color: #946a56;
+     color: white;
+  
+ }
+
+ #frase-impacto{
+     display: block;
+     position: absolute;
+     background-color: #946a56;
+     color: white;
+     margin-top: 15%;
+     margin-left: 5%;
+     font-size: 32px;
+     width: 50vw;
+    height: 11vh;
+    
+ }
+
+ .icon{
+     position: absolute;
+     margin-top: 25%;
+     margin-left: 7.5%;
+     padding: 20px;
+     background-color: #946a56;
+ }
+
+ div img{
+   width: 35px;
+   height: 35px ;
+    background-color: #946a56;
+    align-items: center;
+    margin-left: 20px;
+ }
+ 
+ .icon a{
+     background-color: #946a56;
+ }
+
+ .foto.icon{
+     display: block;
+    position: absolute;
+    margin-top: 25%;
+    width: 25px;
+    height: 35px ;
+ }
+ p img{
+     position: absolute;
+    width: 396px;
+    height: 280px ;
+    margin-left: 800px;
+    margin-top: -371px;
+    background-color: #946a56;
+ }
+ 
