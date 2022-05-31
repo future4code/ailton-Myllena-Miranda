@@ -1,0 +1,51 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{
+    display: grid;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+header{
+    background-color: aqua;
+    grid-column: 1/-1;
+   
+}
+
+.nome{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+
+}
+
+
+
+main{
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+}
+
+main img{
+    height: 20px;
+}
+footer{
+    background-color: brown;
+    grid-column: 1/-1;
+}
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+}
