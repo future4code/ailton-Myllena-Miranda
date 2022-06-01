@@ -35,7 +35,7 @@ header{
    
 }
 .nome img{
-    width: 18px;
+    width: 60%;
 
 }
 
@@ -57,7 +57,7 @@ main{
 
 
 main img{
-    height: 180px;
+    height: 30vh;
     padding: 15px;
 }
 
@@ -92,3 +92,24 @@ footer{
     
 }
    
+@media screen and (min-device-width : 320px) and (max-device-width : 480px){
+    main{
+        grid-template-columns:1fr;
+    
+    }
+
+    main img{
+        height: 10vh;
+        padding: 5px;
+    }
+
+ 
+
+    footer{
+       display: flex;
+       align-items: end;
+       justify-content: center; 
+        
+    }
+
+}
