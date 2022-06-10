@@ -59,12 +59,12 @@ onChangeFotoPost =(event) => {
          <h4>Creat a new post</h4>
 
          <input
-         value = {this.state.InputnomeUser}
+         value = {this.state.InputNomeUser}
          onChange ={this.onChangeNomeUser}
          placeholder = {"Username"}
          />
          <input
-         value={this.state.InputfotoUser}
+         value={this.state.InputFotoUser}
          onChange ={this.onChangeFotoUser}
          placeholder = {"User pic"}
          />
