@@ -87,11 +87,11 @@ class Post extends React.Component {
   render() {
     let iconeCurtida
 
-    if(this.state.curtido === false) {
-      iconeCurtida = iconeCoracaoPreto
-    } else {
+    if(this.state.numeroCurtidas === 0) {
       iconeCurtida = iconeCoracaoBranco
-    }
+    } else {
+      iconeCurtida = iconeCoracaoPreto
+    } 
 
     let componenteComentario
 

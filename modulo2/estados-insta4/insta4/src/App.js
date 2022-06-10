@@ -13,26 +13,68 @@ const MainContainer = styled.div`
 `
 
 class App extends React.Component {
+  state = {
+     infoUser : [
+       {nomeUser:"paulinha", fotoUser: atual, Postin: kin},
+       {nomeUser:"myllenam", fotoUser: atual, Postin:kin},
+       {nomeUser: 'joohoneywalker', fotoUser:gostoso, Postin:gostoso}
+     ],
+      InputnomeUser:'',
+     InputfotoUser:'',
+     InputfotoPost:'',
+    };
+    
+   adicionaPost =() => {
+const novoPost ={
+  nomeUser: this.state.InputnomeUser,
+  fotoUser: this.state.InputfotoUser,
+  Postin: this.state.InputfotoPost
+};
+ const postNovo = [...this.state.infoUser, novoPost];
+ this.setState({infoUser:postNovo});
+};
+onChangeNomeUser = (event) =>{
+  this.setState({nomeUser: event.target.value});
+};
+onChangeFotoUser = (event) =>{
+  this.setState({fotoUser:event.target.value});
+};
+onChangeFotoPost =(event) => {
+  this.setState({Postin: event.target.value});
+};
+     
+
   render() {
+    const moreUsers = this.state.infoUser.map((item)=>{
+      return(
+        <Post nomeUsuario = {item.nomeUser} fotoUsuario = {item.fotoUser} fotoPost = {item.Postin} />
+      );
+    });
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
-        />
+         <header><h1> Myllena'Gram</h1></header>
+         <h4>Creat a new post</h4>
 
-       <Post
-          nomeUsuario={'myllenam'}
-          fotoUsuario={atual}
-          fotoPost={kin}
-        />
+         <input
+         value = {this.state.InputnomeUser}
+         onChange ={this.onChangeNomeUser}
+         placeholder = {"Username"}
+         />
+         <input
+         value={this.state.InputfotoUser}
+         onChange ={this.onChangeFotoUser}
+         placeholder = {"User pic"}
+         />
+         <input
+         value={this.state.InputPostin}
+         onChange= {this.onChangeFotoPost}
+         placeholder = {"User post"}
+         />
+         <div> 
+           <button onClick={this.adicionaPost}>Be cool</button>
+         </div>
 
-          <Post
-          nomeUsuario={'joohoneywalker'}
-          fotoUsuario={gostoso}
-          fotoPost={gostoso}
-        />
+         {moreUsers}
       </MainContainer>
     );
   }
