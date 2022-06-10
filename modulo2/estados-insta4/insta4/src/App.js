@@ -4,6 +4,9 @@ import Post from './components/Post/Post';
 import atual from './img/atual.jpeg';
 import kin from './img/kin-birthday.jpg'
 import gostoso from './img/joohan.jpg'
+import may from './img/may.PNG'
+import crush from './img/may-crush.jpg'
+import nene from './img/nene.PNG'
 
 const MainContainer = styled.div`
   display: flex;
@@ -14,33 +17,33 @@ const MainContainer = styled.div`
 
 class App extends React.Component {
   state = {
-     infoUser : [
-       {nomeUser:"paulinha", fotoUser: atual, Postin: kin},
+     infoUser: [
+       {nomeUser:"useethefireflies", fotoUser: may, Postin: crush},
        {nomeUser:"myllenam", fotoUser: atual, Postin:kin},
-       {nomeUser: 'joohoneywalker', fotoUser:gostoso, Postin:gostoso}
+       {nomeUser: 'joohoneywalker', fotoUser:gostoso, Postin:nene}
      ],
-      InputnomeUser:'',
-     InputfotoUser:'',
-     InputfotoPost:'',
+      InputNomeUser:'',
+     InputFotoUser:'',
+     InputFotoPost:'',
     };
     
    adicionaPost =() => {
 const novoPost ={
-  nomeUser: this.state.InputnomeUser,
-  fotoUser: this.state.InputfotoUser,
-  Postin: this.state.InputfotoPost
+  nomeUser: this.state.InputNomeUser,
+  fotoUser: this.state.InputFotoUser,
+  Postin: this.state.InputFotoPost,
 };
  const postNovo = [...this.state.infoUser, novoPost];
- this.setState({infoUser:postNovo});
+ this.setState({infoUser: postNovo});
 };
 onChangeNomeUser = (event) =>{
-  this.setState({nomeUser: event.target.value});
+  this.setState({InputNomeUser: event.target.value});
 };
 onChangeFotoUser = (event) =>{
-  this.setState({fotoUser:event.target.value});
+  this.setState({InputFotoUser:event.target.value});
 };
 onChangeFotoPost =(event) => {
-  this.setState({Postin: event.target.value});
+  this.setState({InputFotoPost: event.target.value});
 };
      
 
