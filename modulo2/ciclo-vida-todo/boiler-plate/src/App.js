@@ -36,7 +36,7 @@ class App extends React.Component {
     }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.inputValue === this.state.inputValue) {
+    if (prevState.id === this.state.tarefas) {
       localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
     }
   };
@@ -65,7 +65,7 @@ class App extends React.Component {
     };
     listaTarefas.push(novaTarefa);
     this.setState({tarefas:listaTarefas});
-    // localStorage.setItem("tarefa", JSON.stringify(listaTarefas) )
+    localStorage.setItem("tarefa", JSON.stringify(listaTarefas) )
   }
 
   selectTarefa = (id) => {
