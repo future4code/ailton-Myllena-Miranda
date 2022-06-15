@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import {useState} from 'react';
 import './styles.css'
+import react from 'react'
 
 const TarefaList = styled.ul`
   padding: 0;
@@ -33,12 +35,21 @@ class App extends React.Component {
       filtro: ''
     }
 
-  componentDidUpdate() {
-
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.inputValue === this.state.inputValue) {
+      localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
+    }
   };
 
   componentDidMount() {
-
+    const tarefasExibir = localStorage.getItem("tarefas");
+    if (tarefasExibir) {
+      const dadosTarefa = localStorage.getItem("tarefas");
+      const tarefasConvertidos = JSON.parse(dadosTarefa);
+      this.setState({ id: tarefasConvertidos[0]?.id });
+      this.setState({ texto: tarefasConvertidos[0]?.texto });
+      this.setState({ completa: tarefasConvertidos[0]?.completa });
+    }
   };
 
   onChangeInput = (event) => {
@@ -54,7 +65,7 @@ class App extends React.Component {
     };
     listaTarefas.push(novaTarefa);
     this.setState({tarefas:listaTarefas});
-    localStorage.setItem("tarefa", JSON.stringify(listaTarefas) )
+    // localStorage.setItem("tarefa", JSON.stringify(listaTarefas) )
   }
 
   selectTarefa = (id) => {
@@ -93,13 +104,13 @@ this.setState({tarefas: novaListaTarefas})
         <h1>Lista de tarefas</h1>
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput}/>
-          <button onClick={this.criaTarefa}>Adicionar</button>
+          <button type="submit" onClick={this.criaTarefa}>Adicionar</button>
         </InputsContainer>
         <br/>
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
+          <select value={this.state.filtro} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
