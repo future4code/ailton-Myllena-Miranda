@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import fundin from "../img/esqueciFilme.jpeg"
+import axios from "axios";
 
 const BotaoTela = styled.button`
 background-color: #B07D95;
@@ -95,9 +96,10 @@ export class TelaDetalhes extends React.Component {
         this.setState({inputProcureNome: event.target.value})
     }
     
+
     render(){
         const mostraNomes= this.props.objetos.map((nome) =>{
-            return <User> <Estilo><p key={nome.id}>{nome.name}</p> <BotaoBonitin onClick={()=>{this.props.deletaUser(nome.id)}}>remover</BotaoBonitin> </Estilo></User>
+            return <User> <Estilo><p  onClick={ this.props.showInfoUser(nome.id) ||this.props.goTelaUsuario} key={nome.id}> {nome.name}</p> <BotaoBonitin onClick={()=>{this.props.deletaUser(nome.id)}}>remover</BotaoBonitin> </Estilo></User>
           })
         return(
         
@@ -109,7 +111,7 @@ export class TelaDetalhes extends React.Component {
             <Main>
             <Caixinha>
             <Titulo>Usuários</Titulo>
-            <div>{mostraNomes}</div>
+            <div><p>{mostraNomes}</p></div>
             <Procura>
                 <Titulo2>
             <h3>Procurar Usuário</h3>

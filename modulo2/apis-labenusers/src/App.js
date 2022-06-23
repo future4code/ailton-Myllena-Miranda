@@ -6,16 +6,15 @@ import axios from "axios";
 
 
 
-
-
 class App extends React.Component{
   state = {
     tela: "telaInicial",
     user:[],
+    lista: [],
     inputNome: "",
     inputEmail:"",
   }
-
+ 
 onChangeNome = (event) =>{
     this.setState({inputNome: event.target.value})
 }
@@ -25,25 +24,9 @@ onChangeEmail = (event) =>{
 
 componentDidMount(){
   this.getName()
+  this.showInfoUser()
 };
 
-getName = () =>{
-  axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        {
-          headers: {
-            Authorization: 'myllena-miranda-ailton'
-          }
-        }
-      )
-      .then((response) => {
-        this.setState({ user:response.data});
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
 
 
 createUser = () => {
@@ -68,6 +51,40 @@ this.getName()
 });
 };
 
+showInfoUser = (id) =>{
+  axios
+  .get( `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,{
+          headers:{
+              Authorization: 'myllena-miranda-ailton'
+          }
+      })
+      .then((res)=>{
+    this.setState({lista:this.state.user})
+      })
+      .catch((err)=>{
+        alert(err.message)
+      })
+      }
+
+
+      getName = () =>{
+        axios
+            .get(
+              "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+              {
+                headers: {
+                  Authorization: 'myllena-miranda-ailton'
+                }
+              }
+            )
+            .then((response) => {
+              this.setState({ user:response.data});
+            })
+            .catch((error) => {
+              console.log(error.message);
+            });
+        };
+      
 deletaUser =(id) =>{
   if(window.confirm("Você tem certeza?")){
     axios
@@ -85,6 +102,9 @@ deletaUser =(id) =>{
 })
   }
 }
+
+
+
 
     goTelaDetalhes = () =>{
       this.setState({
@@ -113,10 +133,13 @@ deletaUser =(id) =>{
           case "telaDetalhes":
             return<TelaDetalhes goTelaInicial={this.goTelaInicial}
               objetos={this.state.user} deletaUser={this.deletaUser} getName={this.getName}
-               goTelaUsuario={this.goTelaUsuario} />;
+               goTelaUsuario={this.goTelaUsuario} showInfoUser={this.showInfoUser} />;
             break;
             case "telaUsuario":
-              return <DetalheUsuario goTelaDetalhes={this.goTelaDetalhes} />
+              return <DetalheUsuario goTelaDetalhes={this.goTelaDetalhes}
+              showInfoUser={this.showInfoUser} objetos={this.state.user} deletaUser={this.deletaUser} getName={this.getName}
+              lista={this.state.lista}
+              />
               break;
       }
     }
