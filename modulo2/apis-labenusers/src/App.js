@@ -1,7 +1,12 @@
 import React from "react";
 import {TelaInicial} from "./components/TelaInicial"
 import  {TelaDetalhes} from "./components/TelaDetalhes"
+import { DetalheUsuario } from "./components/DetalheUsuario";
 import axios from "axios";
+
+
+
+
 
 class App extends React.Component{
   state = {
@@ -18,7 +23,7 @@ onChangeEmail = (event) =>{
     this.setState({inputEmail: event.target.value})
 }
 
-componentDidMount = () =>{
+componentDidMount(){
   this.getName()
 };
 
@@ -55,6 +60,8 @@ body,
     Authorization: 'myllena-miranda-ailton'
  }}).then((response) => {
 window.alert("Usuário adicionado!");
+this.setState({inputEmail:"", inputNome:""})
+this.getName()
 })
 .catch((error)=>{
   window.alert(error.message);
@@ -68,12 +75,14 @@ deletaUser =(id) =>{
       headers:{
         Authorization: 'myllena-miranda-ailton'
       }
-    }
-)
-const novaLista = this.state.user.filter((item)=>{
-  return item.id !== id
+    })
+.then((res)=>{
+  alert("Usuário deletado com sucesso!")
+  this.getName()
 })
-this.setState({user:novaLista})
+.catch((err)=>{
+ alert("Ocorreu um erro tente novamente")
+})
   }
 }
 
@@ -88,6 +97,12 @@ this.setState({user:novaLista})
         tela:"telaInicial"
       })
     }
+
+    goTelaUsuario = () =>{
+      this.setState({
+        tela:"telaUsuario"
+      })
+    }
     escolheTela = () =>{
       switch (this.state.tela){
         case "telaInicial":
@@ -97,8 +112,12 @@ this.setState({user:novaLista})
           break;
           case "telaDetalhes":
             return<TelaDetalhes goTelaInicial={this.goTelaInicial}
-              objetos={this.state.user} deletaUser={this.deletaUser} getName={this.getName}/>;
+              objetos={this.state.user} deletaUser={this.deletaUser} getName={this.getName}
+               goTelaUsuario={this.goTelaUsuario} />;
             break;
+            case "telaUsuario":
+              return <DetalheUsuario goTelaDetalhes={this.goTelaDetalhes} />
+              break;
       }
     }
  render(){
