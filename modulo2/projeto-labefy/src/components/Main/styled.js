@@ -5,7 +5,6 @@ export const ContainerMain = styled.div`
 width:100%;
 height: 65vh;
 display:flex;
-
 `
 
 export const ContainerBarra = styled.div`

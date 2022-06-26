@@ -53,7 +53,7 @@ export class Main extends React.Component{
          <ContainerMain>
             <BarraLateral goTelaHome={this.goTelaHome} goTelaLikedSongs={this.goTelaLikedSongs}
             goTelaMusic={this.goTelaMusic} goTelaPlaylist={this.goTelaPlaylist} />
-           <ContainerTelin>{this.escolheTela()}</ContainerTelin>
+           <ContainerTelin getPlaylists={this.props.getPlaylists}>{this.escolheTela()}</ContainerTelin>
          </ContainerMain>
         )
     }}
