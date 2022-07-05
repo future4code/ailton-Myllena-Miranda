@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {PokeCard } from "./components/PokeCard";
 import { todesPokemons } from "./services/requests";
+import { Container, Selected } from "./styled"
 
 
 function App() {
@@ -18,8 +19,8 @@ const changePokeName = event =>{
 }
 
   return (
-    <div>
-  <select onChange={changePokeName}>
+    <Container>
+  <Selected onChange={changePokeName}>
           <option value={""}>Nenhum</option>
           {pokeList.map(pokemon => {
             return (
@@ -28,9 +29,9 @@ const changePokeName = event =>{
               </option>
             );
           })}
-        </select>
+        </Selected>
         {pokeName && <PokeCard pokemon={pokeName} />}
-      </div>
+      </Container>
   );
 }
 
