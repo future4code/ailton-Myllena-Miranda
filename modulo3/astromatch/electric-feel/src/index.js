@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
 #root,body{
 max-width: 100vw;
 min-height: 100vh;
+background-color:pink;
+@media screen and (max-width: 480px) {
+  background-color:white;
+}
 }
 #root{
   display: flex;

@@ -23,3 +23,21 @@ width:100%;
 height:76%;
 
 `
+
+export const ImgLista = styled.img`
+width:50px;
+`
+
+export const HeaderMatches = styled.header`
+width:100%;
+height:10%;
+`
+export const MainMatchs = styled.main`
+width:100%;
+height: 90%;
+overflow:auto;
+`
+export const ContainerMatches = styled.div`
+width:100%;
+height:100%;
+`

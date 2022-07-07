@@ -21,13 +21,14 @@ export const getMatches = (saveData) =>{
 //Recebe um id e uma escolha (choice). A escolha é a opção do usuário no momento do swipe.//
 // Deve ser true ou false.//
 
-export const choosePerson = (id, choice) =>{
+export const choosePerson = (id, choice, saveData) =>{
     const body = {
         id: id,
         choice: choice
     }
 axios
 .post(`${BASE_URL}myllena/choose-person`,body)
+.then(getProfileToChoose(saveData))
 .catch((err)=> console.log(err))
 }
 

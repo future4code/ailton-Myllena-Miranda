@@ -10,15 +10,12 @@ color:white;
 text-shadow: 1px 1px 2px black;
 font-size:20px;
 background-image: url(${(props)=> props.photo});
-background-position: center end;
+background-position: ${(props)=>props.joker==="Joker"?"center top left":"center top"};
 background-size:cover;
 border-radius:2%;
 strong{
     font-size:25px;   
 }
-@media screen and (max-width: 480px) {
-    background-position: center;
-  }
 `
 
 export const ContainerTexto = styled.div`

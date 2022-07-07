@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { ImgLista, MainMatchs, HeaderMatches, ContainerMatches } from "./styled";
+import { getMatches } from "../services/requests";
 
 export const Matches = (props)=>{
+
+    const[listaMatches, setListaMatches] = useState([])
+    useEffect(()=>{
+     getMatches(setListaMatches)
+    }, [])
+    
+  
     return(
-        <div>
+        <ContainerMatches>
+            <HeaderMatches>
              <p onClick={()=> props.setPage("myllena")}>Vou colocar a minha foto aqui</p>
              <button onClick={()=>props.setPage("home")}>Home</button>
-            <p>Eu sou a matches</p>
+             </HeaderMatches>
+            <MainMatchs>
+             {listaMatches.map((item)=>{
+                return (
+                    <div key={item.id}>
+                     <ImgLista src={item.photo}/> 
+                     <p>{item.name}</p>                       
+                    </div>
+                )
+             })}
+            </MainMatchs>
             
-        </div>
+        </ContainerMatches>
     )
 }

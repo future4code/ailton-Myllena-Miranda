@@ -19,7 +19,7 @@ export const Home =(props)=>{
         
             </HeaderHome>
             <MainHome>
-            <Card match={match}/>
+            <Card match={match} setMatch={setMatch}/>
             </MainHome>
             <footer>
             <button onClick={()=>props.setPage("matches")}>Matches</button>

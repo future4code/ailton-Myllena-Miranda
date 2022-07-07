@@ -1,19 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { choosePerson } from "../services/requests";
 import { ContainerCard, ContainerTexto } from "./styled";
 
 export const Card = (props)=>{
+ 
     return(
-        <ContainerCard photo={props.match.photo} alt={props.match.photo_alt}>
+        <>
+        {props.match && 
+        <ContainerCard photo={props.match.photo} joker={props.match.name} alt={props.match.photo_alt}>
            <div>
             <ContainerTexto> 
             <p><strong>{props.match.name},</strong> {props.match.age}</p>
             <p>{props.match.bio}</p>
             </ContainerTexto>
             <div>
-            <button>Não</button>
-                <button>Sim</button>
+            <button onClick={()=> choosePerson( props.match.id,false, props.setMatch)}>Não</button>
+                <button onClick={()=> choosePerson( props.match.id,true, props.setMatch)}>Sim</button>
                 </div>
                 </div>
         </ContainerCard>
-    )
+}</>)
 }
