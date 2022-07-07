@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Matches } from "./pages/Matches";
 import { Myllena } from "./pages/Myllena";
 import { clear } from "./services/requests";
+import limpa from "../src/assets/LimparMatches2.png"
 
 function App() {
 const [page, setPage] = useState("home") 
@@ -21,7 +22,7 @@ clear()
       {page === "myllena" && <Myllena setPage={setPage}/>}
      </ContainerPage>
     </Container>
-     <ButtonLimpa onClick={clear}>Limpa campos</ButtonLimpa>
+     <ButtonLimpa src={limpa}onClick={clear}/>
      </>
   );
 }

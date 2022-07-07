@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { getProfileToChoose, choosePerson } from "../services/requests";
 import { Card } from "../components/Card";
-import { ContainerHome, HeaderHome, MainHome } from "./styled";
+import { ContainerHome, HeaderHome, MainHome,Logo,Eu, Lista, FooterHome } from "./styled";
+import logo from "../assets/Electric-Feel.png"
+import eu from "../assets/foto-perfil.JPEG"
+import lista from "../assets/Matches2.png"
 
 
 export const Home =(props)=>{
@@ -14,17 +17,16 @@ export const Home =(props)=>{
     return(
         <ContainerHome>
             <HeaderHome>
-                <p onClick={()=> props.setPage("myllena")}>Vou colocar a minha foto aqui</p>
-            <p>Electric Feel</p>
-        
+            <Logo src={logo}/>
+                <Eu src={eu} onClick={()=> props.setPage("myllena")}/>
             </HeaderHome>
             <MainHome>
             <Card match={match} setMatch={setMatch}/>
             </MainHome>
-            <footer>
-            <button onClick={()=>props.setPage("matches")}>Matches</button>
+            <FooterHome>
+            <Lista src={lista} onClick={()=>props.setPage("matches")}/>
               
-            </footer>
+            </FooterHome>
            
         </ContainerHome>
     )

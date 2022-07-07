@@ -33,3 +33,20 @@ width:98%;
   }
   }
 `
+
+export const Sim = styled.img`
+width:70px;
+margin-right:20px;
+`
+
+export const Nao = styled.img`
+width:67px;
+margin-left:20px;
+`
+export const DivButton = styled.div`
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-top:4px;
+margin-bottom:4px;
+`

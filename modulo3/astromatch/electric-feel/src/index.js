@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import fundo from "../src/assets/fundo.jpg"
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -12,8 +13,10 @@ const GlobalStyle = createGlobalStyle`
 #root,body{
 max-width: 100vw;
 min-height: 100vh;
-background-color:pink;
+background-image:url(${fundo});
+background-position:center;
 @media screen and (max-width: 480px) {
+  background-image:none;
   background-color:white;
 }
 }

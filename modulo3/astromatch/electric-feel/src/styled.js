@@ -19,6 +19,7 @@ background-color:white;
     width: 100vw;
   }
 `
-export const ButtonLimpa = styled.button`
+export const ButtonLimpa = styled.img`
+width:120px;
 margin:0 auto;
 `
