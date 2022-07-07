@@ -2,6 +2,7 @@ import React, {useState,useEffect} from "react";
 import { Container, ContainerPage } from "./styled";
 import { Home } from "./pages/Home";
 import { Matches } from "./pages/Matches";
+import { Myllena } from "./pages/Myllena";
 
 function App() {
 const [page, setPage] = useState("home") 
@@ -11,6 +12,7 @@ const [page, setPage] = useState("home")
       <ContainerPage>
       {page === "home" && <Home setPage={setPage}/>}
       {page ==="matches" && <Matches setPage={setPage}/>}
+      {page === "myllena" && <Myllena setPage={setPage}/>}
      </ContainerPage>
     </Container>
   );

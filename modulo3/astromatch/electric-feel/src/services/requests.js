@@ -7,7 +7,7 @@ export const getProfileToChoose = (saveData)=>{
     axios
     .get(`${BASE_URL}myllena/person`)
     .then((res)=> saveData(res.data.profile))
-    .catch((err)=> console.log(err.response))
+    .catch((err)=> console.log(err))
 }
 
 //Retorna um array de perfis que deram match com você.//
@@ -15,7 +15,7 @@ export const getMatches = (saveData) =>{
     axios
     .get(`${BASE_URL}myllena/matches`)
     .then((res)=> saveData(res.data.matches))
-    .catch((err)=> console.log(response.err))
+    .catch((err)=> console.log(err))
 }
 
 //Recebe um id e uma escolha (choice). A escolha é a opção do usuário no momento do swipe.//
@@ -28,7 +28,7 @@ export const choosePerson = (id, choice) =>{
     }
 axios
 .post(`${BASE_URL}myllena/choose-person`,body)
-.catch((err)=> console.log(err.response))
+.catch((err)=> console.log(err))
 }
 
 //Limpa todos os matches e perfis vistos.//
