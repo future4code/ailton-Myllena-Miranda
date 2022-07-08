@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from "react";
 import { choosePerson } from "../services/requests";
-import { ContainerCard, ContainerTexto,Sim, Nao, DivButton } from "./styled";
+import { ContainerCard, ContainerTexto,Sim, Nao, DivButton,Loading } from "./styled";
 import sim from "../assets/sim2.png"
 import nao from "../assets/nao2.png"
+import loading from "../assets/loading.png"
 
 export const Card = (props)=>{
  
     return(
         <>
-        {props.match && 
+        {props.match ?(
         <ContainerCard photo={props.match.photo} joker={props.match.name} alt={props.match.photo_alt}>
            <div>
             <ContainerTexto> 
@@ -20,6 +21,9 @@ export const Card = (props)=>{
                 <Sim src={sim} onClick={()=> choosePerson( props.match.id,true, props.setMatch)}/>
                 </DivButton>
                 </div>
-        </ContainerCard>
-}</>)
+        </ContainerCard>) : (
+            <Loading src={loading}/>
+        )}
+        </>
+        );
 }

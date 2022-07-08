@@ -54,7 +54,12 @@ border-radius:30px;
 margin-left:8px;
 
 `
-
+export const Chat =styled.img`
+width:50px;
+height:50px;
+margin-right:8px;
+cursor: pointer;
+`
 export const HeaderMatches = styled.header`
 display:flex;
 flex-direction:row;
@@ -62,6 +67,7 @@ align-items:center;
 justify-content:space-between;
 width:100%;
 height:14vh;
+margin-bottom:15px;
 `
 export const MainMatchs = styled.main`
 width:100%;
@@ -74,16 +80,23 @@ export const ItemMatch = styled.div`
 display:flex;
 flex-direction:row;
 align-items:center;
+justify-content:space-between;
 height:50px;
 border-bottom: solid 1px pink;
 gap: 10px;
-margin-top:25px;
+margin-top:15px;
 p{
    color: #23AFE1;
    text-shadow: 0.8px 0.8px 0.8px pink;
 }
 `
+export const MatchPic = styled.div`
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:10px;
 
+`
 
 export const ContainerMatches = styled.div`
 width:100%;

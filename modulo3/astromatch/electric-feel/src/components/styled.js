@@ -52,3 +52,15 @@ justify-content:space-between;
 margin-top:4px;
 margin-bottom:4px;
 `
+
+export const Loading =styled.img`
+ animation: rotateLoad 2s infinite linear;
+  @keyframes rotateLoad {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`

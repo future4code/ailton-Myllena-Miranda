@@ -26,6 +26,7 @@ export const choosePerson = (id, choice, saveData) =>{
         id: id,
         choice: choice
     }
+    saveData(0)
 axios
 .post(`${BASE_URL}myllena/choose-person`,body)
 .then(getProfileToChoose(saveData))
