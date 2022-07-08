@@ -24,8 +24,8 @@ flex-direction:column;
 justify-content:center;
 align-items:flex-start;
 gap:5px;
-margin-left:5px;
-width:98%;
+margin-left:3px;
+width:100%;
 @media screen and (max-width: 480px) {
   text-align:center;
   strong{
@@ -37,11 +37,13 @@ width:98%;
 export const Sim = styled.img`
 width:70px;
 margin-right:20px;
+cursor: pointer;
 `
 
 export const Nao = styled.img`
 width:67px;
 margin-left:20px;
+cursor: pointer;
 `
 export const DivButton = styled.div`
 display:flex;

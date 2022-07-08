@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ImgLista, MainMatchs, HeaderMatches, ContainerMatches } from "./styled";
+import { ImgLista, MainMatchs, HeaderMatches, ContainerMatches, ItemMatch, Logo, Eu } from "./styled";
 import { getMatches } from "../services/requests";
+import logo from "../assets/Electric-Feel.png"
+import eu from "../assets/foto-perfil.JPEG"
 
 export const Matches = (props)=>{
 
@@ -13,16 +15,17 @@ export const Matches = (props)=>{
     return(
         <ContainerMatches>
             <HeaderMatches>
-             <p onClick={()=> props.setPage("myllena")}>Vou colocar a minha foto aqui</p>
-             <button onClick={()=>props.setPage("home")}>Home</button>
+    
+             <Logo onClick={()=>props.setPage("home")} src={logo}/>
+                <Eu src={eu} onClick={()=> props.setPage("myllena")}/>
              </HeaderMatches>
             <MainMatchs>
              {listaMatches.map((item)=>{
                 return (
-                    <div key={item.id}>
+                    <ItemMatch key={item.id}>
                      <ImgLista src={item.photo}/> 
-                     <p>{item.name}</p>                       
-                    </div>
+                     <p><strong>{item.name}</strong></p>                       
+                    </ItemMatch>
                 )
              })}
             </MainMatchs>

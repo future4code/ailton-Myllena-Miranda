@@ -22,4 +22,5 @@ background-color:white;
 export const ButtonLimpa = styled.img`
 width:120px;
 margin:0 auto;
+cursor: pointer;
 `
