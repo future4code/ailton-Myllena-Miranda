@@ -52,6 +52,10 @@ justify-content:space-between;
 margin-top:4px;
 margin-bottom:4px;
 `
+export const Procurando = styled.p`
+text-align:center;
+color:#EB8692;
+`
 
 export const Loading =styled.img`
  animation: rotateLoad 2s infinite linear;

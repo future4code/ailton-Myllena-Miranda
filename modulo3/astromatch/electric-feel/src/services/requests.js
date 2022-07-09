@@ -3,7 +3,7 @@ import { BASE_URL } from "../constants/Url";
 
 //Retorna um perfil que ainda não foi visto por você//
 
-export const getProfileToChoose = (saveData)=>{
+export const getProfileToChoose = (saveData,roleFinal)=>{
     axios
     .get(`${BASE_URL}myllena/person`)
     .then((res)=> saveData(res.data.profile))
@@ -29,7 +29,12 @@ export const choosePerson = (id, choice, saveData) =>{
     saveData(0)
 axios
 .post(`${BASE_URL}myllena/choose-person`,body)
-.then(getProfileToChoose(saveData))
+.then((res)=>{
+    if(choice && res.data.isMatch){
+        alert("Deu match!")
+    }
+    getProfileToChoose(saveData);
+})
 .catch((err)=> console.log(err))
 }
 

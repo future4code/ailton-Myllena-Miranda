@@ -5,10 +5,13 @@ import { ContainerHome, HeaderHome, MainHome,Logo,Eu, Lista, FooterHome } from "
 import logo from "../assets/Electric-Feel.png"
 import eu from "../assets/foto-perfil.JPEG"
 import lista from "../assets/Matches2.png"
+import { Loading } from "../components/styled";
 
 
 export const Home =(props)=>{
  const [match, setMatch]= useState({})
+ const [final, setfinal]= useState(Loading)
+
 
  useEffect(()=>{
  getProfileToChoose(setMatch)
@@ -22,6 +25,7 @@ export const Home =(props)=>{
             </HeaderHome>
             <MainHome>
             <Card match={match} setMatch={setMatch}/>
+        
             </MainHome>
             <FooterHome>
             <Lista src={lista} onClick={()=>props.setPage("matches")}/>
