@@ -1,6 +1,7 @@
 import React from "react";
 import {Header} from "../../components/Header"
-import { ContainerHome, MainHome } from "./styled";
+import { ContainerHome, MainHome,ContainerCardHome, } from "./styled";
+import logo from "../../assets/Xmission.png"
 
 export const HomePage =()=>{
 
@@ -8,16 +9,17 @@ export const HomePage =()=>{
         <ContainerHome>
             <Header/>
             <MainHome>
-                <h1>SpaceX</h1>
-                <button>Viagens disponíveis</button>
-                <h2>Viagens mais procuradas:</h2>
                 <div>
+                <img src={logo}/>
+                </div>
+                <h3>Destinos mais populares:</h3>
+                <ContainerCardHome>
                     <p>Lua</p>
                     <p>Marte</p>
                     <p>Júpiter</p>
-                </div>
+                    <p>Mais destinos</p>
+                </ContainerCardHome>
             </MainHome>
-    
         </ContainerHome>
     )
 
