@@ -13,6 +13,7 @@ p{
 export const Logo = styled.img`
 width:53px;
 margin-left:30px;
+cursor: pointer;
 `
 
 export const BotaoVoltar = styled.button`
