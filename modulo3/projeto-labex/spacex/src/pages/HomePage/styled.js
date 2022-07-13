@@ -7,6 +7,9 @@ height:90vh;
 display:flex;
 flex-direction:column;
 align-items:center;
+@media screen and (max-width: 480px) {
+    min-height:90vh;
+}
 `
 
 export const ContainerHome = styled.div`
@@ -16,14 +19,38 @@ background-image:url(${space});
 background-position:center;
 background-repeat:none;
 background-size:cover;
+
 `
 
-export const ContainerCardHome = styled.div`
+export const ContainerCardsHome = styled.div`
 width:85vw;
-height:27vh;
-border: solid black 2px;
+height:30vh;
 display:flex;
 align-items:center;
 justify-content:space-around;
+margin-top:25px;
+@media screen and (max-width: 480px) {
+  width:100%;
+height:100%;
+   display:grid;
+  grid-template-columns:1fr;
+  gap:30px;
+
+  }
 `
+export const ContainerTextoViagem = styled.div`
+width:83vw;
+text-align:start;
+margin-bottom:3px;
+h3{
+    color:#5E15EB;
+    text-shadow: 1px 1px 1.5px white;
+
+}
+`
+export const ContainerImagemPrincipal = styled.div`
+width:311px;
+height:343px;
+`
+
 

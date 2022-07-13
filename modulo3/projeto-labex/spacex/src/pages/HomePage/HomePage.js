@@ -1,9 +1,15 @@
 import React from "react";
 import {HeaderPublic} from "../../components/HeaderPublic";
-import { ContainerHome, MainHome,ContainerCardHome, } from "./styled";
+import { ContainerHome, MainHome,ContainerCardsHome,
+ ContainerImagemPrincipal } from "./styled";
+import CardHome from "../../components/CardHome";
 import logo from "../../assets/Xmission.png";
 import {useNavigate} from "react-router-dom" ; 
 import { goToApplicationFormPage, goToListTripPage } from "../../routes/coordinator";
+import lua from "../../assets/lua2.png"
+import marte from "../../assets/mars2.png"
+import ju from "../../assets/jupiter2.png"
+import planetas from "../../assets/planets2.png"
 
 export default function HomePage (){
 const navigate = useNavigate()
@@ -11,16 +17,15 @@ const navigate = useNavigate()
         <ContainerHome>
             <HeaderPublic/>
             <MainHome>
-                <div>
+                <ContainerImagemPrincipal>
                 <img src={logo}/>
-                </div>
-                <h3>Destinos mais populares:</h3>
-                <ContainerCardHome>
-                    <p onClick={()=>goToListTripPage(navigate)}>Lua</p>
-                    <p onClick={()=>goToApplicationFormPage(navigate)}>Marte</p>
-                    <p>Júpiter</p>
-                    <p>Mais destinos</p>
-                </ContainerCardHome>
+                </ContainerImagemPrincipal>
+                <ContainerCardsHome>
+                    <CardHome planeta={"Marte"} img={marte} page={()=> goToApplicationFormPage(navigate)} viagem={"Viagem para:"}/>
+                    <CardHome planeta={"Lua"} img={lua}  page={()=> goToApplicationFormPage(navigate)} viagem={"Viagem para:"}/>
+                    <CardHome planeta={"Júpiter"} img={ju} page={()=> goToApplicationFormPage(navigate)} viagem={"Viagem para:"}/>
+                    <CardHome planeta={"Outros destinos"} img={planetas} page={()=> goToListTripPage(navigate)}/>
+                </ContainerCardsHome>
             </MainHome>
         </ContainerHome>
     )
