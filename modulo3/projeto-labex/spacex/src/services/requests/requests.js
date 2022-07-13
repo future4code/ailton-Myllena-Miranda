@@ -34,4 +34,18 @@ export const GetTrips = (saveData)=>{
     .catch((err)=>{
         console.log(err.data)
     })
+};
+
+export const GetTripDetail =(id, saveData)=>{
+    axios
+    .get(
+        `${BASE_URL}${HEADERS}/trip/${id}`
+    )
+    .then((res)=>{
+        saveData(res.data.trip)
+    })
+    .catch((err)=>{
+        console.log(err.data)
+    })
+
 }

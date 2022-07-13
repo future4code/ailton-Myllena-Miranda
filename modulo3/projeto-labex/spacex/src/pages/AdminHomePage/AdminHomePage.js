@@ -24,7 +24,7 @@ export default function AdminHomePage() {
 
   return (
     <ContainerAdm>
-      <HeaderPrivate />
+      <HeaderPrivate/>
       <MainAdm>
         <ContainerPainel>
           <h1>Painel de controle</h1>
