@@ -2,6 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/BaseUrl";
 import { HEADERS } from "../../constants/BaseUrl";
 
+
 export const LoginAdm = (email, password, goTo, navigate)=>{
 const body ={
     email: email,
@@ -36,16 +37,21 @@ export const GetTrips = (saveData)=>{
     })
 };
 
-export const GetTripDetail =(id, saveData)=>{
+export const GetTripDetail =(id, saveData,token)=>{
     axios
     .get(
-        `${BASE_URL}${HEADERS}/trip/${id}`
+        `${BASE_URL}${HEADERS}/trip/${id}`,
+        {
+            headers:{
+                auth: token
+            }
+        }
     )
     .then((res)=>{
+        console.log(res.data.trip)
         saveData(res.data.trip)
     })
     .catch((err)=>{
         console.log(err.data)
     })
-
-}
+};
