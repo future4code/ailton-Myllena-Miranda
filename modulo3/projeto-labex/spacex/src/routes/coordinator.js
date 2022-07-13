@@ -4,22 +4,22 @@ export const goToHomePage = (navigate)=>{
     navigate("/")
 }
 export const goToAdminHomePage = (navigate)=>{
-    navigate("/adm")
+    navigate("/admin/trips/list")
 }
 export const goToApplicationFormPage = (navigate)=>{
-    navigate("/trips/form")
+    navigate("/trips/application")
 }
 export const goToCreateTripPage = (navigate)=>{
-    navigate("/createtrip")
+    navigate("/admin/trips/create")
 }
 export const goToListTripPage = (navigate)=>{
-    navigate("/trips")
+    navigate("/trips/list")
 }
 export const goToLoginPage = (navigate)=>{
     navigate("/login")
 }
-export const goToTripDetailsPage = (navigate)=>{
-    navigate("/adm/tripDetails")
+export const goToTripDetailsPage = (navigate,id)=>{
+    navigate(`/admin/trips/${id}`)
 }
 
 export const goBack = (navigate) => {

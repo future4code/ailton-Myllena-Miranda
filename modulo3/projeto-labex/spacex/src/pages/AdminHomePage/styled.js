@@ -4,6 +4,8 @@ import fundo from "../../assets/spacePages.jpg";
 export const ContainerAdm = styled.div`
 width:100%;
 height:100vh;
+max-height:100vh;
+overflow:auto;
 background-image: url(${fundo});
 background-size:cover;
 background-position:center;

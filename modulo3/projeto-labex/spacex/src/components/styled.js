@@ -39,10 +39,11 @@ background-color:rgba(123, 65, 139, 0.45);
     height:200px ;
     width:180px;
     img{
-        transition:1s;
-        width:150px;
-    }
-
+        transition: width 1s ease-in-out; 
+        -webkit-transition:transform 18s;
+        width:140px;
+transform: rotate(360deg);
+         }
 }
 `
 export const PlanetaLua = styled.img`
