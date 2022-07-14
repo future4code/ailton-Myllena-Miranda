@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/BaseUrl";
 import { HEADERS } from "../../constants/BaseUrl";
 
-
+//POST REQUESTS//
 export const LoginAdm = (email, password, goTo, navigate)=>{
 const body ={
     email: email,
@@ -23,6 +23,43 @@ axios
 };
 
 
+export const CreateTrip =(form,token)=>{
+axios
+.post(
+`${BASE_URL}${HEADERS}/trips`,
+form, {
+    headers:{
+        auth: token
+    }
+}
+)
+.then((res)=>{
+    alert("Viagem Criada com sucesso")
+    GetTrips()
+})
+.catch((err)=>{
+    alert(err.response)
+})
+}
+
+export const ApplyToTrip =(form,id)=>{
+    axios
+    .post(
+        `${BASE_URL}${HEADERS}/trips/${id}/apply`,
+        form
+    )
+    .then((res)=>{
+        alert(res.data.message)
+    })
+    .catch((err)=>{
+        console.log(err.response)
+    })
+}
+////
+
+
+
+//GET REQUESTS//
 export const GetTrips = (saveData)=>{
     axios
     .get(
@@ -36,6 +73,7 @@ export const GetTrips = (saveData)=>{
         console.log(err.response)
     })
 };
+
 
 export const GetTripDetail =(id, saveData,token)=>{
     axios
@@ -55,3 +93,49 @@ export const GetTripDetail =(id, saveData,token)=>{
         console.log(err.response)
     })
 };
+//
+
+//PUT REQUESTS//
+export const DecideCandidate = (tripId, candidateId, token, boolean)=>{
+    const body = {
+        approve: boolean
+    }
+    axios
+    .put(
+        `${BASE_URL}${HEADERS}/trips/${tripId}/candidates/${candidateId}/decide`,
+        body, {
+            headers:{
+                auth:token
+            }
+        }
+    )
+    .then(()=>{
+        if(boolean){
+            alert("Candidato aprovado com sucesso")
+        }else{
+            alert("Candidato não aprovado")
+        }
+    })
+}
+////
+
+//DEL REQUESTS//
+
+export const Delete = (id, token)=>{
+    axios
+    .delete(
+        `${BASE_URL}${HEADERS}/trips/${id}`,
+        {
+            headers:{
+                auth:token
+            }
+        }
+    )
+    .then((res)=>{
+        alert("Viagem apagada com sucesso")
+    })
+    .catch((err)=>{
+      console.log(err.response)
+    })
+}
+////

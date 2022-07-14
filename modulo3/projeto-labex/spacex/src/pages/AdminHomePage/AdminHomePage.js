@@ -16,24 +16,19 @@ import { useProtectedPage } from "../../services/hooks/useProtectedPage";
 
 
 export default function AdminHomePage() {
-  // useProtectedPage()
+  useProtectedPage()
 
   const navigate = useNavigate();
   const [listaTrips,setListaTrips] = useState([])
 
   useEffect(()=>{
-    const token = localStorage.getItem("token");
-    if (!token) {
-      goToLoginPage(navigate);
-    };
   GetTrips(setListaTrips)
   },[]);
 
- const logout =()=>{
-  window.localStorage.setItem("token", null)
-  goToLoginPage(navigate)
-  
- }
+  const logout =()=>{
+    window.localStorage.setItem("token", "")
+    goToLoginPage(navigate)
+    };
 
   return (
     <ContainerAdm>

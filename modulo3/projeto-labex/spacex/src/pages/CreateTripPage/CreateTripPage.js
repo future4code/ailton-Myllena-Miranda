@@ -1,16 +1,23 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { goToLoginPage } from '../../routes/coordinator';
 import { useNavigate } from "react-router-dom";
+import { useProtectedPage } from '../../services/hooks/useProtectedPage';
+import { useForm } from '../../services/hooks/useForm';
 
 export default function CreateTripPage() {
-  const navigate = useNavigate();
-  useEffect(()=>{
-    const token = localStorage.getItem("token")
-    if (!token) {
-      goToLoginPage(navigate);
-    };
-  },[]);
+  useProtectedPage()
+  const[form, onChange]=useForm({name:"", planet:"", date:"", description:"", durationInDays:""})
+ 
   return (
-    <div>CreateTripPage</div>
+    <div>
+      <h1>CreateTripPage</h1>
+      <form>
+        <input
+        name='name'
+        placeholder='name'
+
+        />
+      </form>
+      </div>
   )
 }

@@ -3,14 +3,12 @@ import { goToLoginPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 
 export const useProtectedPage = () => {
-    const navigate = useNavigate();
-    
+    const navigate = useNavigate();   
     useEffect(()=>{
         const token = window.localStorage.getItem('token')
-        if(token === null){
-            console.log("Não ta logado")
+        if(!token){
             goToLoginPage(navigate)
-        }
-    },[window.localStorage.getItem('token') ===null])
-
-}
+        };
+    },[])
+   
+};
