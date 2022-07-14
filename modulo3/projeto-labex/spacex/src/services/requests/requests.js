@@ -3,7 +3,7 @@ import { BASE_URL } from "../../constants/BaseUrl";
 import { HEADERS } from "../../constants/BaseUrl";
 
 //POST REQUESTS//
-export const LoginAdm = (email, password, goTo, navigate)=>{
+export const LoginAdm = (email, password, goTo, navigate, setPass, setEmail)=>{
 const body ={
     email: email,
     password: password
@@ -16,6 +16,8 @@ axios
 .then((res)=>{
     localStorage.setItem("token", res.data.token);
     goTo(navigate)
+    setEmail("")
+    setPass("")
 })
 .catch((err) => {
  alert("Você não tem autorização para entrar nessa página")
@@ -42,14 +44,14 @@ form, {
 })
 }
 
-export const ApplyToTrip =(form,id)=>{
+export const ApplyToTrip =(form)=>{
     axios
     .post(
-        `${BASE_URL}${HEADERS}/trips/${id}/apply`,
+        `${BASE_URL}${HEADERS}/trips/${form.trip}/apply`,
         form
     )
     .then((res)=>{
-        alert(res.data.message)
+        alert("Aplicação feita com sucesso!")
     })
     .catch((err)=>{
         console.log(err.response)
@@ -96,7 +98,8 @@ export const GetTripDetail =(id, saveData,token)=>{
 //
 
 //PUT REQUESTS//
-export const DecideCandidate = (tripId, candidateId, token, boolean)=>{
+export const DecideCandidate = (tripId, candidateId, boolean,setData)=>{
+    const token =localStorage.getItem("token");
     const body = {
         approve: boolean
     }
@@ -112,16 +115,22 @@ export const DecideCandidate = (tripId, candidateId, token, boolean)=>{
     .then(()=>{
         if(boolean){
             alert("Candidato aprovado com sucesso")
+            GetTripDetail(tripId,setData, token)
         }else{
             alert("Candidato não aprovado")
         }
+    })
+    .catch((err)=>{
+        console.log(err.response)
     })
 }
 ////
 
 //DEL REQUESTS//
 
-export const Delete = (id, token)=>{
+export const Delete = (id, setData)=>{
+    const token =localStorage.getItem("token");
+    if(window.confirm("Você quer mesmo apagar esta viagem?")){
     axios
     .delete(
         `${BASE_URL}${HEADERS}/trips/${id}`,
@@ -133,9 +142,11 @@ export const Delete = (id, token)=>{
     )
     .then((res)=>{
         alert("Viagem apagada com sucesso")
+        GetTrips(setData)
     })
     .catch((err)=>{
       console.log(err.response)
     })
+}
 }
 ////

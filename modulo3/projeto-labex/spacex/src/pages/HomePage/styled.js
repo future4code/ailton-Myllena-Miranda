@@ -15,6 +15,8 @@ align-items:center;
 export const ContainerHome = styled.div`
 width:100%;
 height:100%;
+max-height:100vh;
+overflow:auto;
 background-image:url(${space});
 background-position:center;
 background-repeat:none;

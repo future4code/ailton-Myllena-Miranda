@@ -46,7 +46,7 @@ export default function AdminHomePage() {
         <ContainerTrips>
           <h2>Viagens Ativas:</h2>
           {listaTrips.map((item)=>{
-            return <CardAdmin item={item}/>
+            return <CardAdmin setListaTrips={setListaTrips} item={item}/>
           })}
       
         </ContainerTrips>
