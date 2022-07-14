@@ -17,9 +17,9 @@ axios
     localStorage.setItem("token", res.data.token);
     goTo(navigate)
 })
-.catch(() => {
-    alert("Você não tem autorização para entrar nessa página");
-  });
+.catch((err) => {
+ alert("Você não tem autorização para entrar nessa página")
+});
 };
 
 
@@ -33,7 +33,7 @@ export const GetTrips = (saveData)=>{
         saveData(res.data.trips)
     })
     .catch((err)=>{
-        console.log(err.data)
+        console.log(err.response)
     })
 };
 
@@ -52,6 +52,6 @@ export const GetTripDetail =(id, saveData,token)=>{
         saveData(res.data.trip)
     })
     .catch((err)=>{
-        console.log(err.data)
+        console.log(err.response)
     })
 };

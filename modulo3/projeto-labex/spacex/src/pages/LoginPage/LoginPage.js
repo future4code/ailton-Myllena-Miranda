@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { LoginAdm } from '../../services/requests/requests';
 import { goToAdminHomePage } from '../../routes/coordinator';
 import {useNavigate} from "react-router-dom" ; 
@@ -9,6 +9,7 @@ export default function LoginPage() {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const navigate = useNavigate()
+
 
 const onChangeEmail = (event)=>{
   setEmail(event.target.value)

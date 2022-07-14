@@ -7,20 +7,33 @@ import {
   ContainerBotoes,
   ContainerTrips,
 } from "./styled";
-import { goToCreateTripPage } from "../../routes/coordinator";
+import { goToCreateTripPage, goToHomePage , goToLoginPage} from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import CardAdmin from "../../components/CardAdmin/CardAdmin";
 import {GetTrips} from "../../services/requests/requests";
+import { useProtectedPage } from "../../services/hooks/useProtectedPage";
 
 
 
 export default function AdminHomePage() {
+  // useProtectedPage()
+
   const navigate = useNavigate();
   const [listaTrips,setListaTrips] = useState([])
 
   useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if (!token) {
+      goToLoginPage(navigate);
+    };
   GetTrips(setListaTrips)
-  },[])
+  },[]);
+
+ const logout =()=>{
+  window.localStorage.setItem("token", null)
+  goToLoginPage(navigate)
+  
+ }
 
   return (
     <ContainerAdm>
@@ -33,7 +46,7 @@ export default function AdminHomePage() {
           <button onClick={() => goToCreateTripPage(navigate)}>
             Criar Viagem
           </button>
-          <button>Logout</button>
+          <button onClick={logout}>Logout</button>
         </ContainerBotoes>
         <ContainerTrips>
           <h2>Viagens Ativas:</h2>
