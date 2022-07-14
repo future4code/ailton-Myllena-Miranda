@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createGlobalStyle } from "styled-components";
+import back from "../src/assets/spacePages.jpg"
 const GlobalStyle = createGlobalStyle`
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 #root,body{
 max-width: 100vw;

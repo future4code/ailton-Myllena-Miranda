@@ -44,6 +44,10 @@ background-color:rgba(123, 65, 139, 0.45);
         width:140px;
 transform: rotate(360deg);
          }
+         @media screen and (max-width: 480px) {
+            height:250px;
+             width:200px; 
+         }
 }
 `
 export const PlanetaLua = styled.img`

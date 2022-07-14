@@ -33,9 +33,9 @@ justify-content:space-around;
 margin-top:25px;
 @media screen and (max-width: 480px) {
   width:100%;
-height:100%;
-   display:grid;
-  grid-template-columns:1fr;
+  height:100%;
+   display:flex;
+   flex-direction:column;
   gap:30px;
 
   }
