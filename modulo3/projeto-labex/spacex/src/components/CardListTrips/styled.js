@@ -6,6 +6,7 @@ display: flex;
   justify-content: center;
   align-items: flex-start;
   width: 340px;
+  height:200px;
   min-height: 100px;
   font-size: 20px;
   border-radius: 10px;

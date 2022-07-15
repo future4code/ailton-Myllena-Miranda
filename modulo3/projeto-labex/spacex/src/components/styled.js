@@ -21,7 +21,21 @@ cursor: pointer;
 `
 
 export const BotaoVoltar = styled.button`
+cursor: pointer;
  margin-right:30px;
+ width:93px;
+ height:33px;
+ border-radius:14px;
+ font-weight:bold;
+ border:none;
+ color:white;
+ background-color:#5E15EB;
+ box-shadow: 4px 3px 3px rgba(0, 0, 0, 0.6);
+ :hover{
+    background-color:#7A418A;
+    width:95px;
+    height:35px;
+ }
 `
 export const ContainerCardHome= styled.div`
 display:flex;

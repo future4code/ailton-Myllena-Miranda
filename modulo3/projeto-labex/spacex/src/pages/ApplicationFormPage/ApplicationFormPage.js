@@ -3,9 +3,13 @@ import { HeaderPublic } from '../../components/HeaderPublic';
 import { useForm } from '../../services/hooks/useForm';
 import { listCountries } from '../../constants/listCountries';
 import { ApplyToTrip, GetTrips } from '../../services/requests/requests';
+import { ContainerApp,  MainApp, Form, ContainerBoxApp, ButtonVoltar } from './styled';
+import { goBack } from '../../routes/coordinator';
+import { useNavigate } from "react-router-dom";
 
 
 export default function ApplicationFormPage() {
+  const navigate = useNavigate();
   const [trips, setTrips] = useState([])
   const[form, onChange, Clear]=useForm({trip:"",
   name:"", age:"",applicationText:"",profession:"",
@@ -22,14 +26,14 @@ export default function ApplicationFormPage() {
   }
   
   return (
-    <div>
+    <ContainerApp>
       <HeaderPublic/>
-      <main>
-       <h1>Selecione uma viagem</h1>
-
-       <form onSubmit={handleClick}>
+      <MainApp>
+        <ContainerBoxApp>
+       <h1>Inscreva-se para uma viagem</h1>
+       <Form onSubmit={handleClick}>
        <select name='trip' value={form.trip} onChange={onChange}>
-       <option selected disabled value="">Escolha uma viagem</option>
+       <option selected disabled value="">Selecione uma viagem</option>
          {trips.map((item)=>{
           return <option key={item.id} value={item.id}>{item.name}</option>
          })}
@@ -39,40 +43,42 @@ export default function ApplicationFormPage() {
         name='name'
         value={form.name}
         onChange={onChange}
-        placeholder='nome'
+        placeholder='Nome'
         />
 
         <input
         name='age'
         value={form.age}
         onChange={onChange}
-        placeholder='idade'
+        placeholder='Idade'
         type="number"
         min={18}
         />
-        <input
+        <textarea
         name='applicationText'
         value={form.applicationText}
         onChange={onChange}
-        placeholder='sobre mim'
+        placeholder='Fale um pouco sobre você'
         />
         <input
         name='profession'
         value={form.profession}
         onChange={onChange}
-        placeholder='profissão'
+        placeholder='Profissão'
         />
         <select  name='country' onChange={onChange} value={form.country}>
-        <option selected disabled value="">nacionalidade</option>
+        <option selected disabled value="">Selecione sua nacionalidade</option>
         {listCountries.map((item,index)=>{
              return <option key={index}>{item}</option>
           })}
        </select>
-        <button>Se candidatar para a viagem</button>
-       </form>
-       </main>
+        <button>Enviar</button>
+       </Form>
+       <ButtonVoltar onClick={()=>goBack(navigate)}>Voltar</ButtonVoltar>
+       </ContainerBoxApp>
+       </MainApp>
 
       
-      </div>
+      </ContainerApp>
   )
 }

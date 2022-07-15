@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import fundo from "../../assets/spacePages.jpg";
+import fundo from "../../assets/space.jpg";
 
 export const ContainerAdm = styled.div`
 width:100%;
@@ -20,24 +20,48 @@ align-items:center;
 `
 export const ContainerPainel = styled.div`
 display:flex;
+flex-direction:column;
 align-items:center;
-justify-content:center;
-border:solid black 2px;
+justify-content:space-around;
+background-color:rgba(0, 0, 0, 0.6);
+border-radius:15px;
 width:60vw;
 height:18vh;
 margin-top:60px;
+@media screen and (max-width: 480px){
+    width:90vw; 
+}
+h1{
+    margin-top:10px;
+    color:white;
+    text-shadow:1.3px 1.3px 2px #5E15EB;
+}
 `
 export const ContainerBotoes =styled.div`
 display:flex;
 justify-content:space-between;
-width:60vw;
+width:58vw;
+button{
+    cursor: pointer;
+    width:98px;
+    height:30px;
+    border-radius:14px;
+    border:none;
+    background-color:#5E15EB;
+    color:white;
+    font-weight:bold;
+    text-shadow:1px 1px 2px black;
+}
 `
 export const ContainerTrips = styled.div`
 display:flex;
-flex-direction:column;
+flex-wrap: wrap;
+gap: 30px;
 align-items:center;
-width:60vh;
+justify-content:center;
+width:100%;
 height:100%;
 margin-top:20px;
+
 `
 //fazer um grid de 2/2//

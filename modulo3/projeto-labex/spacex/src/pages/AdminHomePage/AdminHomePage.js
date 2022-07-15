@@ -36,15 +36,16 @@ export default function AdminHomePage() {
       <MainAdm>
         <ContainerPainel>
           <h1>Painel de controle</h1>
-        </ContainerPainel>
-        <ContainerBotoes>
+          <ContainerBotoes>
           <button onClick={() => goToCreateTripPage(navigate)}>
             Criar Viagem
           </button>
           <button onClick={logout}>Logout</button>
         </ContainerBotoes>
+        </ContainerPainel>
+        <h2>Viagens Ativas:</h2>
         <ContainerTrips>
-          <h2>Viagens Ativas:</h2>
+          
           {listaTrips.map((item)=>{
             return <CardAdmin setListaTrips={setListaTrips} item={item}/>
           })}
