@@ -24,7 +24,7 @@ const navigate = useNavigate()
                     <CardHome planeta={"Marte"} img={marte} page={()=> goToApplicationFormPage(navigate)} viagem={"Viagem para:"}/>
                     <CardHome planeta={"Lua"} img={lua}  page={()=> goToApplicationFormPage(navigate)} viagem={"Viagem para:"}/>
                     <CardHome planeta={"Júpiter"} img={ju} page={()=> goToApplicationFormPage(navigate)} viagem={"Viagem para:"}/>
-                    <CardHome planeta={"Outros destinos"} img={planetas} page={()=> goToListTripPage(navigate)}/>
+                    <CardHome planeta={"Viagens disponíveis"} img={planetas} page={()=> goToListTripPage(navigate)}/>
                 </ContainerCardsHome>
             </MainHome>
         </ContainerHome>

@@ -16,7 +16,7 @@ export default function CardAdmin(props) {
         <p>{props.item.planet}</p>
         <div>
           <button onClick={()=>goToTripDetailsPage(navigate, props.item.id)}>Detalhes</button>
-          <button onClick={()=>Delete(props.item.id,props.setListaTrips)}>Deletar viagens</button>
+          <button onClick={()=>Delete(props.item.id,props.setListaTrips)}>Deletar viagem</button>
         </div>
     </ContainerCardAdmin>
   )
