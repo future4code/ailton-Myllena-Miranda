@@ -130,7 +130,7 @@ export const DecideCandidate = (tripId, candidateId, boolean,setData)=>{
 
 export const Delete = (id, setData)=>{
     const token =localStorage.getItem("token");
-    if(window.confirm("Você quer mesmo apagar esta viagem?")){
+    if(window.confirm("Você quer mesmo excluir esta viagem?")){
     axios
     .delete(
         `${BASE_URL}${HEADERS}/trips/${id}`,

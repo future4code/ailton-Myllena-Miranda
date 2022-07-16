@@ -28,6 +28,7 @@ border-radius:15px;
 width:60vw;
 height:18vh;
 margin-top:60px;
+margin-bottom:30px;
 @media screen and (max-width: 480px){
     width:90vw; 
 }

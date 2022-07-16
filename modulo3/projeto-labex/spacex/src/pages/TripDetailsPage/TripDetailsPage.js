@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import { GetTripDetail, DecideCandidate } from '../../services/requests/requests';
-import { goToLoginPage } from '../../routes/coordinator';
 import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from '../../services/hooks/useProtectedPage';
 import { HeaderPrivate } from '../../components/HeaderPrivate';
+import { ContainerTripDetails, MaintripDetails,TripBox,ContainerCandidates, 
+  CandidatesPendent, CandidatesApproved, CardAproved, CardPendent } from './styled';
 
 
 
@@ -19,46 +20,53 @@ GetTripDetail(params.id, setTrip,token)
 },[]);
 
   return (
-    <div>
+    <ContainerTripDetails>
       <HeaderPrivate/>
-      <main>
+      <MaintripDetails>
+        <TripBox>
       <h1>{trip.name}</h1>
       <div>
         <p>Descrição: {trip.description}</p>
         <p>Data: {trip.date}</p>
         <p>Duração: {trip.durationInDays} dias</p>
         <p>Planeta: {trip.planet}</p>
-      </div>
-      <div>
-        <div>
+        </div>
+      </TripBox>
+      <ContainerCandidates>
+        <CandidatesPendent>
           <h2>Candidatos Pendentes</h2>
           {trip.candidates?.map((item, index)=>{
             return(
+              <CardPendent>
+              <p><strong>{item.name}</strong></p>
+              <p>Idade: {item.age}</p>
+              <p>Descrição: {item.applicationText}</p>
+              <p>Profissão: {item.profession}</p>
+              <p>País: {item.country}</p>
               <div>
-              <p>{item.name}</p>
-              <p>{item.age}</p>
-              <p>{item.applicationText}</p>
-              <p>{item.profession}</p>
-              <p>{item.country}</p>
               <button onClick={()=>DecideCandidate(trip.id, item.id,true,setTrip)}>Autorizar</button>
               <button onClick={()=>DecideCandidate(trip.id, item.id,false,setTrip)}>Não autorizar</button>
               </div>
+              </CardPendent>
             )
           })}
-        </div>
-        <div>
+        </CandidatesPendent>
+        <CandidatesApproved>
           <h2>Candidatos Aprovados</h2>
           {trip.approved?.map((item)=>{
             return(
-              <div>
-              <p>{item.name}</p>
-              <p>{item.profession}</p>
-              </div>
+              <CardAproved>
+              <p><strong>{item.name}</strong></p>
+              <p>Idade: {item.age}</p>
+              <p>Descrição: {item.applicationText}</p>
+              <p>Profissão: {item.profession}</p>
+              <p>País: {item.country}</p>
+              </CardAproved>
             )
           })}
-        </div>
-      </div>
-      </main>
-    </div>
+        </CandidatesApproved>
+      </ContainerCandidates>
+      </MaintripDetails>
+    </ContainerTripDetails>
   )
 }

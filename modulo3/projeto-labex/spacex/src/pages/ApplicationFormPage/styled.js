@@ -88,6 +88,12 @@ border-radius:8px;
     @media screen and (max-width: 480px){
         margin-left:105px;
         width:70px;
+        :hover{
+        background-color: #5E15EB;
+        box-shadow: 4px 3px 3px #312D45;
+        width:60px;
+        height:30px;
+    }
     }
 
 `

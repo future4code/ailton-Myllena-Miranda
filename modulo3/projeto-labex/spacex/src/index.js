@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createGlobalStyle } from "styled-components";
-import back from "../src/assets/spacePages.jpg"
 const GlobalStyle = createGlobalStyle`
 *{
   margin: 0;

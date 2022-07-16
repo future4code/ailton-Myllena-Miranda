@@ -15,4 +15,23 @@ export const ContainerCardAdmin = styled.div`
     width: 42vw;
     height: 20vh;
   }
-`;
+`
+
+export const ContainerButtonsCard = styled.div`
+display:flex;
+justify-content:space-around;
+width:100%;
+button{
+  cursor: pointer;
+  width:80px;
+  height:25px;
+  border-radius:20px;
+  border:none;
+  background-color:#C6A49A;
+  color:white;
+  :hover{
+    background-color:#5E15EB;
+  }
+}
+`
+

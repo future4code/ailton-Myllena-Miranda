@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from '../../services/hooks/useProtectedPage';
 import { useForm } from '../../services/hooks/useForm';
 import { HeaderPrivate } from '../../components/HeaderPrivate';
-import { ContainerMainCreateTrip,ContainerPageCreateTrip, FormCreateTrip  } from './styled';
+import { ContainerMainCreateTrip,ContainerPageCreateTrip, FormCreateTrip, CreateTripBox  } from './styled';
 import { CreateTrip } from '../../services/requests/requests';
 
 
@@ -24,13 +24,14 @@ export default function CreateTripPage() {
     <ContainerPageCreateTrip>
       <HeaderPrivate/>
       <ContainerMainCreateTrip>
+        <CreateTripBox>
       <h1>Criar viagem</h1>
       <FormCreateTrip onSubmit={handleClick}>
         <input
         name='name'
         value={form.name}
         onChange={onChange}
-        placeholder='nome'
+        placeholder='Título da viagem'
         />
 
       <select name='planet'onChange={onChange} value={form.planet}>
@@ -49,11 +50,11 @@ export default function CreateTripPage() {
         type="date"
         min={new Date().toISOString().slice(0,10)}
         />
-        <input
+        <textarea
         name='description'
         value={form.description}
         onChange={onChange}
-        placeholder='descrição'
+        placeholder='Descrição da viagem'
         />
         <input
         name='durationInDays'
@@ -65,7 +66,7 @@ export default function CreateTripPage() {
         />
         <button>Criar Viagem</button>
       </FormCreateTrip>
-
+      </CreateTripBox>
       </ContainerMainCreateTrip>
       </ContainerPageCreateTrip>
   )
