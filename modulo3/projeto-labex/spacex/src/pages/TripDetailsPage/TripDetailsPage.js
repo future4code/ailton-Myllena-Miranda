@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from '../../services/hooks/useProtectedPage';
 import { HeaderPrivate } from '../../components/HeaderPrivate';
 import { ContainerTripDetails, MaintripDetails,TripBox,ContainerCandidates, 
-  CandidatesPendent, CandidatesApproved, CardAproved, CardPendent } from './styled';
+  CandidatesPendent, CandidatesApproved, CardAproved, CardPendent, DivSemDescription,
+  ContainerBotoes} from './styled';
 
 
 
@@ -27,9 +28,11 @@ GetTripDetail(params.id, setTrip,token)
       <h1>{trip.name}</h1>
       <div>
         <p>Descrição: {trip.description}</p>
+        <DivSemDescription >
         <p>Data: {trip.date}</p>
         <p>Duração: {trip.durationInDays} dias</p>
         <p>Planeta: {trip.planet}</p>
+        </DivSemDescription>
         </div>
       </TripBox>
       <ContainerCandidates>
@@ -43,10 +46,10 @@ GetTripDetail(params.id, setTrip,token)
               <p>Descrição: {item.applicationText}</p>
               <p>Profissão: {item.profession}</p>
               <p>País: {item.country}</p>
-              <div>
+              <ContainerBotoes>
               <button onClick={()=>DecideCandidate(trip.id, item.id,true,setTrip)}>Autorizar</button>
               <button onClick={()=>DecideCandidate(trip.id, item.id,false,setTrip)}>Não autorizar</button>
-              </div>
+              </ContainerBotoes>
               </CardPendent>
             )
           })}

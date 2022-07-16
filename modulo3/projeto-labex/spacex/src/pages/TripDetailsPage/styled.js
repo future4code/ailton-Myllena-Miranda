@@ -20,15 +20,27 @@ height:90vh;
 min-height:90vh;
 `
 
+export const DivSemDescription = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:6px;
+width:100%;
+height:100%;
+
+`
+
 export const TripBox = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 gap:15px;
-width:30vw;
-height:60vh;
-min-height:60vh;
+width:35vw;
+max-width:35vw;
+height:70vh;
+min-height:70vh;
 border-radius:500px;
 background-color:rgba(123, 65, 139, 0.45);
 box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.88);
@@ -43,8 +55,9 @@ p{
 }
 @media screen and (max-width: 480px){
     width:90vw;
-    min-height:50vh;
-height:50vh;  
+    max-width:90vw;
+    min-height:55vh;
+    height:55vh;  
 p{
     font-size:22px;
 }
@@ -88,9 +101,9 @@ export const CardAproved = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  width: 25vw;
-  height: 25vh;
-  min-height: 25vh;
+  width: 28vw;
+  height: 28vh;
+  min-height: 28vh;
   overflow:auto;
   background-color: rgba(92, 20, 235, 0.54);
   border-radius: 10px;
@@ -103,18 +116,39 @@ export const CardAproved = styled.div`
     margin-left:20px;
   }
   @media screen and (max-width: 480px) {
-    width: 70vw;
+    width: 90vw;
     height: 30vh;
   }
+`
+
+export const ContainerBotoes = styled.div`
+display:flex;
+align-items:center;
+justify-content :space-around;
+width:100%;
+button{
+  cursor: pointer;
+  width:98px;
+  height:23px;
+  border-radius:20px;
+  border:none;
+  font-weight:bold;
+  background-color:#62426D;
+  :hover{
+    background-color: #5E15EB;
+    height:25px;
+    width:100px;
+  }
+}
 `
 export const CardPendent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  width: 25vw;
-  height: 25vh;
-  min-height: 25vh;
+  width: 28vw;
+  height: 28vh;
+  min-height: 28vh;
   overflow:auto;
   background-color: rgba(216, 202, 182, 0.45);
   border-radius: 10px;
@@ -127,7 +161,8 @@ export const CardPendent = styled.div`
     margin-left:20px;
   }
   @media screen and (max-width: 480px) {
-    width: 70vw;
+    width: 90vw;
+    min-height: 30vh;
     height: 30vh;
   }
 `

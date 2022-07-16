@@ -36,11 +36,14 @@ export default function CreateTripPage() {
 
       <select name='planet'onChange={onChange} value={form.planet}>
       <option selected disabled value="">Escolha um planeta</option>
+      <option >Alderaan</option>
+        <option >Illum</option>
+        <option >Coruscant</option>
         <option >Lua</option>
         <option >Marte </option>
         <option >Júpiter</option>
         <option >Plutão</option>
-        <option >Saturno</option>
+        <option >Saturno</option>  
       </select>
         <input
         name='date'

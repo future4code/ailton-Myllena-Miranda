@@ -11,12 +11,12 @@ p{
 }
 ` 
 export const Logo = styled.img`
-width:53px;
+width:60px;
 margin:30px;
 cursor: pointer;
 :hover{
     transition:0.4s;
-    width:60px;
+    width:65px;
 }
 `
 

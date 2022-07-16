@@ -53,6 +53,17 @@ h3{
 export const ContainerImagemPrincipal = styled.div`
 width:311px;
 height:343px;
+margin-top:15px;
+@media screen and (max-width: 480px){
+    margin-top:20px;
+    margin-bottom:10px;
+  }
 `
+export const Nave = styled.img`
+  width:290px;
+ 
+
+`
+
 
 
