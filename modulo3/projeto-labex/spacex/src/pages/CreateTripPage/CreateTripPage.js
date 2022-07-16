@@ -32,6 +32,9 @@ export default function CreateTripPage() {
         value={form.name}
         onChange={onChange}
         placeholder='Título da viagem'
+        required
+        pattern={"^.{3,}"}
+       title={"A aplicação deve ter no mínimo 3 caracteres"}
         />
 
       <select name='planet'onChange={onChange} value={form.planet}>
@@ -53,11 +56,14 @@ export default function CreateTripPage() {
         type="date"
         min={new Date().toISOString().slice(0,10)}
         />
-        <textarea
+        <input
         name='description'
         value={form.description}
         onChange={onChange}
         placeholder='Descrição da viagem'
+        required
+        pattern={"^.{30,120}"}
+       title={"A aplicação deve ter no mínimo 30 caracteres e no máximo 120"}
         />
         <input
         name='durationInDays'

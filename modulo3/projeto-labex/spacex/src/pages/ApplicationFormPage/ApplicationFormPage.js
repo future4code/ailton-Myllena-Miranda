@@ -44,6 +44,8 @@ export default function ApplicationFormPage() {
         value={form.name}
         onChange={onChange}
         placeholder='Nome'
+        pattern={"^.{3,}"}
+        title={"A aplicação deve ter no mínimo 3 caracteres"}
         />
 
         <input
@@ -54,17 +56,23 @@ export default function ApplicationFormPage() {
         type="number"
         min={18}
         />
-        <textarea
+        <input
         name='applicationText'
         value={form.applicationText}
         onChange={onChange}
         placeholder='Fale um pouco sobre você'
+        required
+        pattern={"^.{30,80}"}
+       title={"A aplicação deve ter no mínimo 30 caracteres e no máximo 80"}
         />
         <input
         name='profession'
         value={form.profession}
         onChange={onChange}
         placeholder='Profissão'
+        required
+        pattern={"^.{3,}"}
+        title={"A aplicação deve ter no mínimo 3 caracteres"}
         />
         <select  name='country' onChange={onChange} value={form.country}>
         <option selected disabled value="">Selecione sua nacionalidade</option>

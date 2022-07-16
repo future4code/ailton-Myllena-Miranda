@@ -17,13 +17,17 @@ min-height:90vh;
 display:flex;
 flex-direction:column;
 align-items:center;
+h2{
+    color:white;
+    text-shadow:1.3px 1.3px 2px #5E15EB;
+}
 `
 export const ContainerPainel = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:space-around;
-background-color:rgba(0, 0, 0, 0.6);
+background-color:rgba(198, 164, 154, 0.58);
 border-radius:15px;
 width:60vw;
 height:18vh;
@@ -37,6 +41,7 @@ h1{
     color:white;
     text-shadow:1.3px 1.3px 2px #5E15EB;
 }
+
 `
 export const ContainerBotoes =styled.div`
 display:flex;

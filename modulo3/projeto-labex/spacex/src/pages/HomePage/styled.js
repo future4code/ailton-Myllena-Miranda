@@ -21,6 +21,10 @@ background-image:url(${space});
 background-position:center;
 background-repeat:none;
 background-size:cover;
+@media screen and (max-width: 480px){
+  max-height:100vh;
+overflow:auto;
+}
 
 `
 
@@ -56,11 +60,12 @@ height:343px;
 margin-top:15px;
 @media screen and (max-width: 480px){
     margin-top:20px;
-    margin-bottom:10px;
+    margin-bottom:15px;
   }
 `
 export const Nave = styled.img`
   width:290px;
+
  
 
 `

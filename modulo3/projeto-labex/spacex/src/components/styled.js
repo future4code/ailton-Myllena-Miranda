@@ -50,6 +50,7 @@ cursor: pointer;
 background-color:rgba(123, 65, 139, 0.45);
 :hover{
     transition:0.8s;
+    min-height:200px;
     height:200px ;
     width:180px;
     img{
@@ -59,8 +60,9 @@ background-color:rgba(123, 65, 139, 0.45);
 transform: rotate(360deg);
          }
          @media screen and (max-width: 480px) {
-            height:250px;
+            height:300px;
              width:200px; 
+             margin-bottom:5px;
          }
 }
 `
