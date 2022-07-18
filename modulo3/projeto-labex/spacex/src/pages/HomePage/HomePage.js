@@ -3,12 +3,8 @@ import {HeaderPublic} from "../../components/HeaderPublic";
 import { ContainerHome, MainHome,ContainerCardsHome,
  ContainerImagemPrincipal, Nave } from "./styled";
 import CardHome from "../../components/CardHome";
-import logo from "../../assets/Xmission.png";
 import {useNavigate} from "react-router-dom" ; 
 import { goToApplicationFormPage, goToListTripPage } from "../../routes/coordinator";
-import lua from "../../assets/lua2.png";
-import marte from "../../assets/mars2.png";
-import ju from "../../assets/jupiter2.png";
 import planetas from "../../assets/planets2.png";
 import corus from "../../assets/corus.png";
 import illum from "../../assets/illum2.PNG";

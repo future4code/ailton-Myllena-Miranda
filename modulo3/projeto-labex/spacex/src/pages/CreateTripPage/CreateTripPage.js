@@ -62,7 +62,7 @@ export default function CreateTripPage() {
         onChange={onChange}
         placeholder='Descrição da viagem'
         required
-        pattern={"^.{30,120}"}
+        pattern={"^.{30,250}"}
        title={"A aplicação deve ter no mínimo 30 caracteres e no máximo 120"}
         />
         <input

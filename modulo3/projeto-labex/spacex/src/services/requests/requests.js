@@ -42,7 +42,7 @@ form, {
     GetTrips()
 })
 .catch((err)=>{
-    alert(err.response)
+    // alert(err.response)
 })
 }
 
@@ -155,8 +155,8 @@ export const Delete = (id, setData)=>{
         }
     )
     .then((res)=>{
-        alert("Viagem apagada com sucesso")
-        GetTrips(setData)
+        alert("Viagem apagada com sucesso");
+        GetTrips(setData);
     })
     .catch((err)=>{
       console.log(err.response)

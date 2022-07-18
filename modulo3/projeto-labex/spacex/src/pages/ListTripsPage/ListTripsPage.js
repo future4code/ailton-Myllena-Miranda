@@ -6,6 +6,8 @@ import CardListTrips from '../../components/CardListTrips/CardListTrips';
 import { useNavigate } from "react-router-dom";
 import { goBack, goToApplicationFormPage } from '../../routes/coordinator';
 import { useLoading } from '../../services/hooks/useLoading';
+import loading from "../../assets/loading2.png";
+import { Loading } from "../styled";
 
 
 export default function ListTripsPage() {
@@ -29,7 +31,7 @@ GetTrips(setListaTrips,setIsLoading, setError)
       </ContainerButtonList>
       </Title>
       <ContainerCardsList>
-      {isLoading && <p>Carregando...</p>}
+      {isLoading && <div><Loading src={loading}/></div>}
 {!isLoading && error && <p>{error.message}</p>}
 {!isLoading && listaTrips && listaTrips.length > 0  &&
             <>
@@ -39,7 +41,7 @@ GetTrips(setListaTrips,setIsLoading, setError)
           )
         })}
         </>}
-        {!isLoading && listaTrips && listaTrips.length === 0 && <p>Não há nenhuma viagem disponível no momento :(</p>}
+        {!isLoading && listaTrips && listaTrips.length === 0 && <strong>Não há nenhuma viagem disponível no momento :(</strong>}
       </ContainerCardsList>
       </MainList>
       </ContainerList>

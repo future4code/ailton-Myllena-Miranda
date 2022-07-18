@@ -2,7 +2,6 @@ import React from "react";
 import { ContainerHeader,Logo, BotaoVoltar } from "./styled";
 import { goToHomePage, goBack } from "../routes/coordinator";
 import {useNavigate} from "react-router-dom" ; 
-import logo from "../assets/logo.png";
 import foi from  "../assets/novaLogo2.png";
 
 export const HeaderPrivate = ()=>{

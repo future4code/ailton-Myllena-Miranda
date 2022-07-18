@@ -7,7 +7,9 @@ import { HeaderPrivate } from '../../components/HeaderPrivate';
 import { ContainerTripDetails, MaintripDetails,TripBox,ContainerCandidates, 
   CandidatesPendent, CandidatesApproved, CardAproved, CardPendent, DivSemDescription,
   ContainerBotoes} from './styled';
-  import { useLoading } from '../../services/hooks/useLoading';
+  import { useLoading } from "../../services/hooks/useLoading";
+  import loading from "../../assets/loading2.png";
+  import { Loading } from "../styled";
 
 
 
@@ -32,7 +34,7 @@ console.log(!objetoVazio)
       <HeaderPrivate/>
       <MaintripDetails>
         <TripBox>
-{isLoading && <p>Carregando...</p>}
+        {isLoading && <Loading src={loading}/>}
 {!isLoading && error && <p>{error.message}</p>}
       {!isLoading && trip && trip !== objetoVazio &&
        <><h1>{trip.name}</h1>
@@ -49,7 +51,7 @@ console.log(!objetoVazio)
       <ContainerCandidates>
         <CandidatesPendent>
         <h2>Candidatos Pendentes</h2>
-        {isLoading && <p>Carregando...</p>}
+        {isLoading && <Loading src={loading}/>}
 {!isLoading && error && <p>{error.message}</p>}
 {!isLoading && trip.candidates && trip.candidates.length > 0  &&
   <>
@@ -70,11 +72,11 @@ console.log(!objetoVazio)
     )
   })}
     </>}
-    {!isLoading && trip.candidates && trip.candidates.length === 0 && <p>Não há candidatos pendentes</p>}
+    {!isLoading && trip.candidates && trip.candidates.length === 0 && <strong>Não há candidatos pendentes</strong>}
         </CandidatesPendent>
         <CandidatesApproved>
           <h2>Candidatos Aprovados</h2>
-          {isLoading && <p>Carregando...</p>}
+          {isLoading && <Loading src={loading}/>}
 {!isLoading && error && <p>{error.message}</p>}
 {!isLoading && trip.approved && trip.approved.length > 0  &&
  <>
@@ -90,7 +92,7 @@ console.log(!objetoVazio)
             )
           })}
            </>}
-           {!isLoading && trip.approved && trip.approved.length === 0 && <p>Não há candidatos aprovados</p>}
+           {!isLoading && trip.approved && trip.approved.length === 0 && <strong>Não há candidatos aprovados</strong>}
         </CandidatesApproved>
       </ContainerCandidates>
       </MaintripDetails>

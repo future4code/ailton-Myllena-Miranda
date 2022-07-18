@@ -13,6 +13,8 @@ import CardAdmin from "../../components/CardAdmin/CardAdmin";
 import {GetTrips} from "../../services/requests/requests";
 import { useProtectedPage } from "../../services/hooks/useProtectedPage";
 import { useLoading } from "../../services/hooks/useLoading";
+import loading from "../../assets/loading2.png";
+import { Loading } from "../styled";
 
 
 
@@ -47,15 +49,15 @@ export default function AdminHomePage() {
         </ContainerPainel>
         <h2>Viagens Ativas:</h2>
         <ContainerTrips>
-        {isLoading && <p>Carregando...</p>}
+        {isLoading && <Loading src={loading} />}
 {!isLoading && error && <p>{error.message}</p>}
 {!isLoading && listaTrips && listaTrips.length > 0  &&
           <>
           {listaTrips.map((item)=>{
-            return <CardAdmin setListaTrips={setListaTrips} item={item}/>
+            return <CardAdmin  setListaTrips={setListaTrips} item={item}/>
           })}
          </>}
-         {!isLoading && listaTrips && listaTrips.length === 0 && <p>Não há nenhuma viagem disponível no momento :(</p>}
+         {!isLoading && listaTrips && listaTrips.length === 0 && <strong>Não há nenhuma viagem disponível no momento :(</strong>}
         </ContainerTrips>
       </MainAdm>
     </ContainerAdm>
