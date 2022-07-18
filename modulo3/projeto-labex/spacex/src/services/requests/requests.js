@@ -2,6 +2,8 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/BaseUrl";
 import { HEADERS } from "../../constants/BaseUrl";
 
+
+
 //POST REQUESTS//
 export const LoginAdm = (email, password, goTo, navigate, setPass, setEmail)=>{
 const body ={
@@ -62,22 +64,27 @@ export const ApplyToTrip =(form)=>{
 
 
 //GET REQUESTS//
-export const GetTrips = (saveData)=>{
+export const GetTrips = (saveData, setIsLoading, setError)=>{
+    setIsLoading(true);
     axios
     .get(
         `${BASE_URL}${HEADERS}/trips`
     )
     .then((res)=>{
-        console.log("rolou")
-        saveData(res.data.trips)
+        console.log("rolou");
+        setIsLoading(false);
+        saveData(res.data.trips);
     })
     .catch((err)=>{
+        setIsLoading(false);
+        setError(err);
         console.log(err.response)
     })
 };
 
 
-export const GetTripDetail =(id, saveData,token)=>{
+export const GetTripDetail =(id, saveData,token, setIsLoading, setError)=>{
+    setIsLoading(true);
     axios
     .get(
         `${BASE_URL}${HEADERS}/trip/${id}`,
@@ -88,21 +95,25 @@ export const GetTripDetail =(id, saveData,token)=>{
         }
     )
     .then((res)=>{
-        console.log(res.data.trip)
+        setIsLoading(false);
         saveData(res.data.trip)
     })
     .catch((err)=>{
+        setIsLoading(false);
+        setError(err);
         console.log(err.response)
     })
 };
 //
 
 //PUT REQUESTS//
-export const DecideCandidate = (tripId, candidateId, boolean,setData)=>{
+export const DecideCandidate = (tripId, candidateId, boolean,setData,setIsLoading)=>{
     const token =localStorage.getItem("token");
     const body = {
         approve: boolean
     }
+    setIsLoading(true);
+
     axios
     .put(
         `${BASE_URL}${HEADERS}/trips/${tripId}/candidates/${candidateId}/decide`,
@@ -113,13 +124,16 @@ export const DecideCandidate = (tripId, candidateId, boolean,setData)=>{
         }
     )
     .then(()=>{
+        setIsLoading(false);
         if(boolean){
             alert("Candidato aprovado com sucesso")
-            GetTripDetail(tripId,setData, token)
+            GetTripDetail(tripId,setData, token,setIsLoading)
         }else{
             alert("Candidato não aprovado")
+            GetTripDetail(tripId,setData, token,setIsLoading)
         }
     })
+
     .catch((err)=>{
         console.log(err.response)
     })

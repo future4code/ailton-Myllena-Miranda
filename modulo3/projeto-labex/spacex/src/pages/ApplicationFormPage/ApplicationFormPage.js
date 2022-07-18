@@ -6,6 +6,7 @@ import { ApplyToTrip, GetTrips } from '../../services/requests/requests';
 import { ContainerApp,  MainApp, Form, ContainerBoxApp, ButtonVoltar } from './styled';
 import { goBack } from '../../routes/coordinator';
 import { useNavigate } from "react-router-dom";
+import { useLoading } from '../../services/hooks/useLoading';
 
 
 export default function ApplicationFormPage() {
@@ -14,9 +15,9 @@ export default function ApplicationFormPage() {
   const[form, onChange, Clear]=useForm({trip:"",
   name:"", age:"",applicationText:"",profession:"",
    country:"" })
-
+   const[isLoading, error, setIsLoading, setError] = useLoading()
    useEffect(()=>{
-    GetTrips(setTrips)
+    GetTrips(setTrips, setIsLoading, setError)
    },[])
 
     const handleClick = (event)=>{

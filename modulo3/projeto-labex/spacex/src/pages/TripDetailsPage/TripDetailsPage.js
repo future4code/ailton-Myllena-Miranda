@@ -7,25 +7,35 @@ import { HeaderPrivate } from '../../components/HeaderPrivate';
 import { ContainerTripDetails, MaintripDetails,TripBox,ContainerCandidates, 
   CandidatesPendent, CandidatesApproved, CardAproved, CardPendent, DivSemDescription,
   ContainerBotoes} from './styled';
+  import { useLoading } from '../../services/hooks/useLoading';
 
 
 
 export default function TripDetailsPage() {
+  const[isLoading, error, setIsLoading, setError] = useLoading()
   useProtectedPage()
   const params = useParams();
   const[trip, setTrip] = useState({});
   const navigate = useNavigate();
-useEffect(()=>{
-  const token = localStorage.getItem("token")
-GetTripDetail(params.id, setTrip,token)
-},[]);
+  
 
+useEffect(()=>{
+ 
+    const token = localStorage.getItem("token")
+    GetTripDetail(params.id, setTrip,token, setIsLoading, setError)
+},[]);
+  
+const objetoVazio = {}
+console.log(!objetoVazio)
   return (
     <ContainerTripDetails>
       <HeaderPrivate/>
       <MaintripDetails>
         <TripBox>
-      <h1>{trip.name}</h1>
+{isLoading && <p>Carregando...</p>}
+{!isLoading && error && <p>{error.message}</p>}
+      {!isLoading && trip && trip !== objetoVazio &&
+       <><h1>{trip.name}</h1>
       <div>
         <p>Descrição: {trip.description}</p>
         <DivSemDescription >
@@ -33,29 +43,41 @@ GetTripDetail(params.id, setTrip,token)
         <p>Duração: {trip.durationInDays} dias</p>
         <p>Planeta: {trip.planet}</p>
         </DivSemDescription>
-        </div>
+        </div></>}
+        {!isLoading && trip && trip===objetoVazio && <p>Não há dados</p>}
       </TripBox>
       <ContainerCandidates>
         <CandidatesPendent>
-          <h2>Candidatos Pendentes</h2>
-          {trip.candidates?.map((item, index)=>{
-            return(
-              <CardPendent>
-              <p><strong>{item.name}</strong></p>
-              <p>Idade: {item.age}</p>
-              <p>Descrição: {item.applicationText}</p>
-              <p>Profissão: {item.profession}</p>
-              <p>País: {item.country}</p>
-              <ContainerBotoes>
-              <button onClick={()=>DecideCandidate(trip.id, item.id,true,setTrip)}>Autorizar</button>
-              <button onClick={()=>DecideCandidate(trip.id, item.id,false,setTrip)}>Não autorizar</button>
-              </ContainerBotoes>
-              </CardPendent>
-            )
-          })}
+        <h2>Candidatos Pendentes</h2>
+        {isLoading && <p>Carregando...</p>}
+{!isLoading && error && <p>{error.message}</p>}
+{!isLoading && trip.candidates && trip.candidates.length > 0  &&
+  <>
+  {trip.candidates?.map((item, index)=>{
+    return(
+      <CardPendent>
+      <p><strong>{item.name}</strong></p>
+      <p>Idade: {item.age}</p>
+      <p>Descrição: {item.applicationText}</p>
+      <p>Profissão: {item.profession}</p>
+      <p>País: {item.country}</p>
+      <ContainerBotoes>
+      <button onClick={()=>DecideCandidate(trip.id, item.id,true,setTrip,setIsLoading)}>Autorizar</button>
+      <button onClick={()=>DecideCandidate(trip.id, item.id,false,setTrip,setIsLoading)}>Não autorizar</button>
+  
+      </ContainerBotoes>
+      </CardPendent>
+    )
+  })}
+    </>}
+    {!isLoading && trip.candidates && trip.candidates.length === 0 && <p>Não há candidatos pendentes</p>}
         </CandidatesPendent>
         <CandidatesApproved>
           <h2>Candidatos Aprovados</h2>
+          {isLoading && <p>Carregando...</p>}
+{!isLoading && error && <p>{error.message}</p>}
+{!isLoading && trip.approved && trip.approved.length > 0  &&
+ <>
           {trip.approved?.map((item)=>{
             return(
               <CardAproved>
@@ -67,6 +89,8 @@ GetTripDetail(params.id, setTrip,token)
               </CardAproved>
             )
           })}
+           </>}
+           {!isLoading && trip.approved && trip.approved.length === 0 && <p>Não há candidatos aprovados</p>}
         </CandidatesApproved>
       </ContainerCandidates>
       </MaintripDetails>
