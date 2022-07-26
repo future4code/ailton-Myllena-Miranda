@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { ContainerButton, ButtonName } from "./styled";
 
-export const RoundButton = () => {
+export const RoundButton = (props) => {
   return (
-    <div>RoundButton</div>
-  )
-}
+    <ContainerButton color={props.color}  border={props.border} radius={props.radius} onClick={props.onClick}>
+      <ButtonName text={props.text}>{props.title}</ButtonName>
+    </ContainerButton>
+  );
+};

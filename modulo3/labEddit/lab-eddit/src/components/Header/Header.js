@@ -1,7 +1,22 @@
 import React from 'react'
+import { ContainerHeader, LogoDiv, ContainerLogo, Title } from './styled';
+import { Separator } from '../../styled';
 
-export const Header = () => {
+export const Header = (props) => {
   return (
-    <div>Header</div>
+    <ContainerHeader>
+        
+      <ContainerLogo>
+        <div>
+      <LogoDiv color={"#FE7E02"} border={"100% 0 0 0"}/>
+      <LogoDiv color={"#F9B24E"} border={"0 0 100% 0"}/>
+      </div>
+      <div>
+      <LogoDiv color={"#45525B"} border={"100% 0 0 0"}/>
+      <LogoDiv color={"#A8BBC6"} border={"0 0 100% 0"}/>
+      </div>
+      </ContainerLogo>
+      <Title onClick={props.onClick}>{props.title}</Title>
+    </ContainerHeader>
   )
 }
