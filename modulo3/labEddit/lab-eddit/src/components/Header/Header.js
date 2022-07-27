@@ -1,11 +1,12 @@
 import React from 'react'
-import { ContainerHeader, LogoDiv, ContainerLogo, Title } from './styled';
+import { ContainerHeader, LogoDiv, ContainerLogo, Title, XImg } from './styled';
 import { Separator } from '../../styled';
+
 
 export const Header = (props) => {
   return (
     <ContainerHeader>
-        
+        <XImg src={props.src}/>
       <ContainerLogo>
         <div>
       <LogoDiv color={"#FE7E02"} border={"100% 0 0 0"}/>
