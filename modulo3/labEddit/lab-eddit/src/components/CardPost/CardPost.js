@@ -19,9 +19,9 @@ import up from "../../assets/up.png";
 import { Separator } from "../../styled";
 
 export const CardPost = (props) => {
-  console.log(props.Po)
+ 
   return (
-    <ContainerCard>
+    <ContainerCard onClick={props.onClick}>
       <Separator valor={"9px"}/>
       <ContainerUser>
         <UserP>{`Enviado por: ${props.Post.username}`} </UserP>
@@ -40,10 +40,12 @@ export const CardPost = (props) => {
           <SetaImg src={down} />
         </ContainerVotesIcon>
         <Separator width={"10px"}/>
+        {props.typeCard === "post" &&
         <ContainerChatMessage>
           <ChatImg src={chat} />
           <MessageP>{props.Post.commentCount}</MessageP>
         </ContainerChatMessage>
+        }
       </ContainerVotes>
       <Separator valor={"9px"}/>
     </ContainerCard>

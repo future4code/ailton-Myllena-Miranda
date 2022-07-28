@@ -15,6 +15,7 @@ import { GlobalContext } from "../../global/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { CreatePost } from "../../services/requests";
+import { goToPostPage } from "../../routes/coordinator";
 
 
 export default function FeedPage() {
@@ -63,7 +64,7 @@ export default function FeedPage() {
       {Posts?.map((item)=>{
         return (
           <>
-           <CardPost Post={item} />
+           <CardPost typeCard={"post"}  Post={item} onClick={()=>goToPostPage(navigate,item.id)}/>
            <Separator valor={"10px"}/>
           </>
         )
