@@ -18,31 +18,31 @@ import down from "../../assets/down.png";
 import up from "../../assets/up.png";
 import { Separator } from "../../styled";
 
-export const CardPost = () => {
+export const CardPost = (props) => {
+  console.log(props.Po)
   return (
     <ContainerCard>
       <Separator valor={"9px"}/>
       <ContainerUser>
-        <UserP>Enviado por: labaluno83 </UserP>
+        <UserP>{`Enviado por: ${props.Post.username}`} </UserP>
       </ContainerUser>
       <Separator valor={"18px"}/>
       <ContainerTexto>
         <TextoP>
-          Porque a maioria dos desenvolvedores usam Linux? ou as empresas de
-          tecnologia usam Linux ?
+         {props.Post.body}
         </TextoP>
       </ContainerTexto>
       <Separator valor={"18px"}/>
       <ContainerVotes>
         <ContainerVotesIcon>
           <SetaImg src={up} />
-          <VoteP>1.2K</VoteP>
+          <VoteP>{props.Post.voteSum}</VoteP>
           <SetaImg src={down} />
         </ContainerVotesIcon>
         <Separator width={"10px"}/>
         <ContainerChatMessage>
           <ChatImg src={chat} />
-          <MessageP>132</MessageP>
+          <MessageP>{props.Post.commentCount}</MessageP>
         </ContainerChatMessage>
       </ContainerVotes>
       <Separator valor={"9px"}/>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerButton = styled.div`
+export const ContainerButton = styled.button`
 cursor: pointer;
 display:flex;
 align-items:center;
@@ -8,7 +8,7 @@ justify-content:center;
 width:365px;
 height:51px;
 border-radius:${(props) => props.radius};
-border: solid 1px ${(props) => props.border};
+border:${(props)=> props.border === "none"? "none" : `solid 1px ${props.border}`};
 background-image: linear-gradient(to  right, ${(props) => props.color});
 `
 export const ButtonName = styled.p`

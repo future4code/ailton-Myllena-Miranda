@@ -32,7 +32,7 @@ export default function RegistPage() {
     <ContainerRegist>
       <Header title={"Entrar"} />
       <Separator valor={"29px"} />
-      <Title>Olá, boas vindas ao LabEddit ;)</Title>
+      <Title>{"Olá, boas vindas ao LabEddit ;)"}</Title>
       <Separator valor={"194px"} />
       <NovoContainerInput onSubmit={handleClick}>
         <PadraoInput

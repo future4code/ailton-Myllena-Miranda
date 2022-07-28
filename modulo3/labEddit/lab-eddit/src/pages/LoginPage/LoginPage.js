@@ -17,9 +17,22 @@ import {
 import { Separator } from "../../styled";
 import { useNavigate } from "react-router-dom";
 import { goToRegistPage, goToFeedPage } from "../../routes/coordinator";
+import { useForm } from "../../hooks/useForm";
+import { Login } from "../../services/requests";
+import { token } from "../../constants/token";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const [form, onChange, Clear] = useForm({
+    email: "",
+    password: "",
+  });
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    Login(form, goToFeedPage, navigate);
+    Clear();
+  };
 
   return (
     <ContainerLogin>
@@ -35,10 +48,18 @@ export default function LoginPage() {
       </ContainerLogo>
       <Title>LabEddit</Title>
       <Subtitle>O projeto de rede social da Labenu</Subtitle>
-      <ContainerInput>
-        <PadraoInput placeholder="Nome" />
+      <ContainerInput onSubmit={handleClick}>
+        <PadraoInput
+          name="email"
+          value={form.email}
+          placeholder="E-mail"
+          onChange={onChange}
+        />
         <PadraoInput
           type="password"
+          name="password"
+          value={form.password}
+          onChange={onChange}
           placeholder="Senha"
           pattern="[0-9a-zA-Z]{8,30}"
           title={
@@ -47,7 +68,6 @@ export default function LoginPage() {
         />
         <Separator valor={"56px"} />
         <RoundButton
-          onClick={() => goToFeedPage(navigate)}
           color={"#FF6489, #F9B24E"}
           title={"Continuar"}
           text={"#FFFFFF"}
@@ -58,7 +78,7 @@ export default function LoginPage() {
       <FineLine />
       <DivButtonCrie>
         <RoundButton
-          onClick={() => goToRegistPage(navigate)}
+           onClick={()=>goToRegistPage(navigate)}
           color={"#FFFFFF,#FFFFFF"}
           title={"Crie uma conta!"}
           text={"#FE7E02"}
