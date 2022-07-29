@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import {
   ContainerFeed,
@@ -14,23 +14,30 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { GlobalContext } from "../../global/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { CreatePost } from "../../services/requests";
+import { CreatePost, CreatePostVote, DeletePostVote, getPosts } from "../../services/requests";
 import { goToPostPage } from "../../routes/coordinator";
 
 
 export default function FeedPage() {
   useProtectedPage();
+  const[post, setPost]= useState(undefined)
   const navigate = useNavigate();
-  const { logout, Posts} = useContext(GlobalContext);
+  const { logout, Posts, state, setState} = useContext(GlobalContext);
  
   const [form, onChange, Clear] = useForm({
     title: "",
     body: "",
   });
 
+  useEffect(()=>{
+   getPosts(setPost)
+    
+  }, [state])
+
   const handleClick = (event) => {
     event.preventDefault();
     CreatePost(form);
+    setState(state + 1)
     Clear();
   };
 
@@ -64,7 +71,12 @@ export default function FeedPage() {
       {Posts?.map((item)=>{
         return (
           <>
-           <CardPost typeCard={"post"}  Post={item} onClick={()=>goToPostPage(navigate,item.id)}/>
+           <CardPost typeCard={"post"}  Post={item} onClick={()=>goToPostPage(navigate,item.id)}
+           upVote={()=>{CreatePostVote(item.id, 1) 
+            setState(state + 1)}} downVote={()=>{CreatePostVote(item.id,-1)
+            setState(state + 1)}} 
+           delete={()=> {DeletePostVote(item.id)
+           setState(state + 1)}} />
            <Separator valor={"10px"}/>
           </>
         )

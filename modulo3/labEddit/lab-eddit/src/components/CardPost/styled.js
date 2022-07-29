@@ -72,6 +72,7 @@ font-family: "IBM Plex Sans", sans-serif;
 font-weight:500;
 font-size:18px;
 line-height:23.4px;
+word-break:break-all;
 `
 export const ContainerUser = styled.div`
 padding-left:10px;

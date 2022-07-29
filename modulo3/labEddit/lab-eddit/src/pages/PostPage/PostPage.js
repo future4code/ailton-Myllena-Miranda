@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import x from "../../assets/x.png";
 import { ContainerPostPage, FineLinePost } from "./styled";
@@ -10,26 +10,44 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { GlobalContext } from "../../global/GlobalContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { CreateComment } from "../../services/requests";
+import {
+  CreateComment,
+  getPostComments,
+  CreatePostVote,
+  DeletePostVote,
+  CreateCommentVote,
+  DeleteCommentVote,
+} from "../../services/requests";
 import { useRequest } from "../../hooks/useRequest";
 
 export default function PostPage() {
   useProtectedPage();
+  const [state, setState] = useState(0);
+  const [comments, setComments] = useState(undefined);
   const navigate = useNavigate();
   const { logout, Posts } = useContext(GlobalContext);
   const [form, onChange, Clear] = useForm({
     body: "",
   });
-  const Comments = useRequest(`/posts/${params.id}/comments`);
   const params = useParams();
+  const Comments = useRequest(`/posts/${params.id}/comments`, state);
   const Item = Posts?.map((item) => {
     if (item.id === params.id) {
-      return <CardPost typeCard={"post"} Post={item} />;
+      return <CardPost typeCard={"post"} Post={item}  upVote={()=>{CreatePostVote(item.id, 1)
+      setState(state + 1)}} downVote={()=>{CreatePostVote(item.id,-1)
+        setState(state + 1)}} 
+      delete={()=> {DeletePostVote(item.id)
+        setState(state + 1)}} />;
     }
   });
+  useEffect(() => {
+    getPostComments(setComments, params.id);
+  }, [state]);
+
   const handleClick = (event) => {
     event.preventDefault();
     CreateComment(params.id, form);
+    setState(state + 1);
     Clear();
   };
 
@@ -58,7 +76,16 @@ export default function PostPage() {
       <FineLinePost />
       <Separator valor={"36px"} />
       {Comments?.map((item) => {
-        <CardPost Post={item} typeCard={"comments"} />;
+        return (
+          <>
+            <CardPost Post={item} typeCard={"comments"} upVote={()=>{CreateCommentVote(item.id,1)
+            setState(state + 1)}}
+            downVote={()=>{CreateCommentVote(item.id, -1)
+              setState(state + 1)}} delete={()=>{DeleteCommentVote(item.id)
+                setState(state + 1)}} />
+            <Separator valor={"12.11px"} />
+          </>
+        );
       })}
     </ContainerPostPage>
   );
