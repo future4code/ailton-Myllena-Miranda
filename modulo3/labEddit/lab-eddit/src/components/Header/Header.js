@@ -6,7 +6,7 @@ import { Separator } from '../../styled';
 export const Header = (props) => {
   return (
     <ContainerHeader>
-        <XImg src={props.src}/>
+        <XImg src={props.src} onClick={props.voltar}/>
       <ContainerLogo>
         <div>
       <LogoDiv color={"#FE7E02"} border={"100% 0 0 0"}/>

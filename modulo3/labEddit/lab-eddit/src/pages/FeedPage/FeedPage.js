@@ -6,6 +6,8 @@ import {
   InputDescription,
   InputTitle,
   FineLineModificada,
+  ContainerPagination,
+  PaginationButton
 } from "./styled";
 import { Separator } from "../../styled";
 import { RoundButton } from "../../components/RoundButton/RoundButton";
@@ -14,7 +16,7 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { GlobalContext } from "../../global/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { CreatePost, CreatePostVote, DeletePostVote, getPosts } from "../../services/requests";
+import { CreatePost, CreatePostVote, DeletePostVote} from "../../services/requests";
 import { goToPostPage } from "../../routes/coordinator";
 
 
@@ -22,17 +24,13 @@ export default function FeedPage() {
   useProtectedPage();
   const[post, setPost]= useState(undefined)
   const navigate = useNavigate();
-  const { logout, Posts, state, setState} = useContext(GlobalContext);
+  const { logout, Posts, state, setState, pagination, setPagination} = useContext(GlobalContext);
  
   const [form, onChange, Clear] = useForm({
     title: "",
     body: "",
   });
 
-  useEffect(()=>{
-   getPosts(setPost)
-    
-  }, [state])
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -81,7 +79,12 @@ export default function FeedPage() {
           </>
         )
       })}
-     
+      <ContainerPagination>
+        {pagination > 1 &&  <PaginationButton onClick={()=>setPagination(pagination -1)}>Anterior</PaginationButton>}
+    
+  {Posts?.length === 20 &&  <PaginationButton onClick={()=>setPagination(pagination + 1)}>Próximo</PaginationButton>}
+     </ContainerPagination>
+     <Separator valor={"8px"}/>
     </ContainerFeed>
   );
 }

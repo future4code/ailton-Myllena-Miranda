@@ -1,7 +1,10 @@
 import React from 'react'
+import { ContainerError } from './styled'
 
 export default function Error() {
   return (
-    <div>Eu sou a Error</div>
+    <ContainerError>
+    <h1>404 Página não encontrada</h1>
+    </ContainerError>
   )
 }

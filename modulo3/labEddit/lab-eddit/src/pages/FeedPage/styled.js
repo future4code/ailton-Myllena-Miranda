@@ -54,3 +54,19 @@ border-radius:12px;
    
 }
 `
+
+export const ContainerPagination = styled.div`
+display:flex;
+justify-content:space-between;
+width:364px;
+` 
+export const PaginationButton = styled.p`
+   font-family: "IBM Plex Sans", sans-serif;
+   font-weight:bold;
+   font-size:18px;
+   color:white;
+   background-image: linear-gradient(to  right, #FF6489, #F9B24E);
+   padding: 10px;
+   border: 1px solid #FF6489;
+   border-radius:28px;
+`

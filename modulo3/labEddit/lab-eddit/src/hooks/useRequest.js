@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../constants/BASE_URL";
 import { token } from "../constants/token";
 
-export const useRequest = (url, state) => {
+export const useRequest = (url, state, pagination) => {
   const [data, setData] = useState(undefined);
 
   useEffect(() => {
@@ -20,6 +20,6 @@ export const useRequest = (url, state) => {
       .catch((err) => {
         console.log(err.response.data);
       });
-  }, [url, state]);
+  }, [url, state, pagination]);
   return data
 };

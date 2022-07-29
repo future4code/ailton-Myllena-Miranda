@@ -2,36 +2,6 @@ import axios from "axios";
 import { BASE_URL } from "../constants/BASE_URL";
 import { token } from "../constants/token";
 
-export const getPosts = (setData) => {
-  axios
-    .get(`${BASE_URL}/posts`, {
-      headers: {
-        authorization: token,
-      },
-    })
-    .then((res) => {
-      setData(res.data);
-    })
-    .catch((err) => {
-      console.log(err.response.data);
-    });
-};
-
-export const getPostComments = (setData, id) => {
-  axios
-    .get(`${BASE_URL}/posts/${id}/comments`, {
-      headers: {
-        authorization: token,
-      },
-    })
-    .then((res) => {
-      setData(res.data);
-    })
-    .catch((err) => {
-      console.log(err.response.data);
-    });
-};
-
 export const Signup = (form) => {
   axios
     .post(`${BASE_URL}/users/signup`, form)
@@ -98,7 +68,7 @@ export const CreatePostVote = (id, data) => {
       },
     })
     .then((res) => {
-      console.log(res.data);
+      
     })
     .catch((err) => {
       console.log(err.response.data);
@@ -116,7 +86,7 @@ export const CreateCommentVote = (id, data) => {
       },
     })
     .then((res) => {
-      console.log(res.data);
+  
     })
     .catch((err) => {
       console.log(err.response.data);
@@ -131,7 +101,6 @@ export const DeletePostVote = (id) => {
       },
     })
     .then((res) => {
-      console.log(res.data);
     })
     .catch((err) => {
       console.log(err.response.data);
@@ -146,7 +115,7 @@ export const DeleteCommentVote = (id) => {
       },
     })
     .then((res) => {
-      console.log(res.data);
+    
     })
     .catch((err) => {
       console.log(err.response.data);

@@ -26,9 +26,9 @@ export const CardPost = (props) => {
       <Separator valor={"9px"} />
       <ContainerUser onClick={props.onClick}>
         <UserP>{`Enviado por: ${props.Post.username}`} </UserP>
-      </ContainerUser >
+      </ContainerUser>
       <Separator valor={"18px"} />
-      <ContainerTexto  onClick={props.onClick}>
+      <ContainerTexto onClick={props.onClick}>
         <TextoP>{props.Post.body}</TextoP>
       </ContainerTexto>
       <Separator valor={"18px"} />

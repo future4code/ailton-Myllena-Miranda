@@ -15,6 +15,8 @@ import { PadraoInput } from "../LoginPage/styled";
 import { RoundButton } from "../../components/RoundButton/RoundButton";
 import { useForm } from "../../hooks/useForm";
 import { Signup } from "../../services/requests";
+import { useNavigate } from "react-router-dom";
+import { goToLoginPage } from "../../routes/coordinator";
 
 export default function RegistPage() {
   const [form, onChange, Clear] = useForm({
@@ -22,7 +24,7 @@ export default function RegistPage() {
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate()
   const handleClick = (event) => {
     event.preventDefault();
     Signup(form);
@@ -30,7 +32,7 @@ export default function RegistPage() {
   };
   return (
     <ContainerRegist>
-      <Header title={"Entrar"} />
+      <Header title={"Entrar"} onClick={()=> goToLoginPage(navigate)}/>
       <Separator valor={"29px"} />
       <Title>{"Olá, boas vindas ao LabEddit ;)"}</Title>
       <Separator valor={"194px"} />

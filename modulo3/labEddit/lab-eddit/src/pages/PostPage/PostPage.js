@@ -12,13 +12,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import {
   CreateComment,
-  getPostComments,
   CreatePostVote,
   DeletePostVote,
   CreateCommentVote,
   DeleteCommentVote,
 } from "../../services/requests";
 import { useRequest } from "../../hooks/useRequest";
+import { goBack } from "../../routes/coordinator";
 
 export default function PostPage() {
   useProtectedPage();
@@ -40,9 +40,7 @@ export default function PostPage() {
         setState(state + 1)}} />;
     }
   });
-  useEffect(() => {
-    getPostComments(setComments, params.id);
-  }, [state]);
+ 
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -53,7 +51,7 @@ export default function PostPage() {
 
   return (
     <ContainerPostPage>
-      <Header title={"Logout"} src={x} onClick={() => logout(navigate)} />
+      <Header title={"Logout"} src={x} onClick={() => logout(navigate)} voltar={()=>goBack(navigate)}/>
       <Separator valor={"28px"} />
       {Item}
       <Separator valor={"12px"} />
@@ -78,7 +76,7 @@ export default function PostPage() {
       {Comments?.map((item) => {
         return (
           <>
-            <CardPost Post={item} typeCard={"comments"} upVote={()=>{CreateCommentVote(item.id,1)
+            <CardPost  Post={item} typeCard={"comments"} upVote={()=>{CreateCommentVote(item.id,1)
             setState(state + 1)}}
             downVote={()=>{CreateCommentVote(item.id, -1)
               setState(state + 1)}} delete={()=>{DeleteCommentVote(item.id)
