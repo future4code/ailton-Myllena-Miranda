@@ -40,7 +40,7 @@ export const CreatePost = (form) => {
     });
 };
 
-export const CreateComment = (id, form) => {
+export const CreateComment = (id, form, setState, state) => {
   axios
     .post(`${BASE_URL}/posts/${id}/comments`, form, {
       headers: {
@@ -49,6 +49,7 @@ export const CreateComment = (id, form) => {
     })
     .then((res) => {
       alert("Comentário publicado! :)");
+      setState(state + 1);
     })
     .catch((err) => {
       console.log(err.response.data);

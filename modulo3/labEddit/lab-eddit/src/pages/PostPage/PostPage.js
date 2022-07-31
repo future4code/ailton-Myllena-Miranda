@@ -23,9 +23,8 @@ import { goBack } from "../../routes/coordinator";
 export default function PostPage() {
   useProtectedPage();
   const [state, setState] = useState(0);
-  const [comments, setComments] = useState(undefined);
   const navigate = useNavigate();
-  const { logout, Posts } = useContext(GlobalContext);
+  const { logout, Posts} = useContext(GlobalContext);
   const [form, onChange, Clear] = useForm({
     body: "",
   });
@@ -41,10 +40,9 @@ export default function PostPage() {
     }
   });
  
-
   const handleClick = (event) => {
     event.preventDefault();
-    CreateComment(params.id, form);
+    CreateComment(params.id, form,setState, state);
     setState(state + 1);
     Clear();
   };
