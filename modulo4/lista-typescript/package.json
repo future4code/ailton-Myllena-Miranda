@@ -4,7 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "exercicio1": "tsc && node ./build/Exercicio1.js",
+  "exercicio2": "tsc && node ./build/Exercicio2.js",
+  "exercicio3": "tsc && node ./build/Exercicio3.js",
+  "exercicio4": "tsc && node ./build/Exercicio4.js",
+  "exercicio5": "tsc && node ./build/Exercicio5.js",
+  "exercicio6": "tsc && node ./build/Exercicio6.js",
+  "exercicio7": "tsc && node ./build/Exercicio7.js",
+  "exercicio8": "tsc && node ./build/Exercicio8.js",
+  "exercicio9": "tsc && node ./build/Exercicio9.js",
+  "exercicio10": "tsc && node ./build/Exercicio10.js"
   },
   "keywords": [],
   "author": "Myllena",
