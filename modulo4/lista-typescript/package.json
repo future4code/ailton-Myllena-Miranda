@@ -13,7 +13,8 @@
   "exercicio7": "tsc && node ./build/Exercicio7.js",
   "exercicio8": "tsc && node ./build/Exercicio8.js",
   "exercicio9": "tsc && node ./build/Exercicio9.js",
-  "exercicio10": "tsc && node ./build/Exercicio10.js"
+  "exercicio10": "tsc && node ./build/Exercicio10.js",
+  "exercicio11": "tsc && node ./build/Exercicio11.js"
   },
   "keywords": [],
   "author": "Myllena",
