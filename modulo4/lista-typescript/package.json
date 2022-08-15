@@ -1,0 +1,25 @@
+{
+  "name": "lista-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "exercicio1": "tsc && node ./build/Exercicio1.js",
+  "exercicio2": "tsc && node ./build/Exercicio2.js",
+  "exercicio3": "tsc && node ./build/Exercicio3.js",
+  "exercicio4": "tsc && node ./build/Exercicio4.js",
+  "exercicio5": "tsc && node ./build/Exercicio5.js",
+  "exercicio6": "tsc && node ./build/Exercicio6.js",
+  "exercicio7": "tsc && node ./build/Exercicio7.js",
+  "exercicio8": "tsc && node ./build/Exercicio8.js",
+  "exercicio9": "tsc && node ./build/Exercicio9.js",
+  "exercicio10": "tsc && node ./build/Exercicio10.js",
+  "exercicio11": "tsc && node ./build/Exercicio11.js"
+  },
+  "keywords": [],
+  "author": "Myllena",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
