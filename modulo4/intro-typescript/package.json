@@ -1,0 +1,22 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "exercicio1": "tsc && node ./build/Exercicio1.js",
+    "exercicio2": "tsc && node ./build/Exercicio2.js",
+    "exercicio3": "tsc && node ./build/Exercicio3.js",
+    "exercicio4": "tsc && node ./build/Exercicio4.js",
+    "exercicio5": "tsc && node ./build/Exercicio5.js",
+    "exercicio6": "tsc && node ./build/Exercicio6.js",
+    "exercicio7": "tsc && node ./build/Exercicio7.js",
+    "exercicio8": "tsc && node ./build/Exercicio8.js",
+    "exercicio9": "tsc && node ./build/Exercicio9.js"
+  },
+  "author": "Myllena Miranda",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.6.5"
+  }
+}
