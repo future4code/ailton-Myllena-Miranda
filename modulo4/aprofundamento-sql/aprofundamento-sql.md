@@ -1,5 +1,5 @@
 ### Exercício 1
-`
+```
 SET SQL_SAFE_UPDATES = 0;
 ALTER TABLE Actor ADD tipo_sorvete_favorito VARCHAR(255);
 SELECT * FROM Actor;
@@ -12,9 +12,9 @@ ALTER TABLE Actor CHANGE tipo_sorvete_favorito favorite_ice_cream_flavor VARCHAR
 #### c) ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
 #### mantem a propriedade genter com um alimitação de até 255 caracteres
 #### d) ALTER TABLE Actor CHANGE gender gender VARCHAR(100)
-`
+```
 ### Exercício 2
-`
+```
 #### a) 
 UPDATE Actor
 SET name = "Myllena"
@@ -40,16 +40,16 @@ WHERE
 SET oi = "Moacyr Franco"
 WHERE id = "001";
 #### Error Code: 1054. Unknown column 'oi' in 'field list' campo desconhecido (não existe)
-`
+```
 ### Exercício 3
- `
+ ```
 #### a)
 DELETE FROM Actor WHERE name = "Anne Hathaway";
 #### b)
 DELETE FROM Actor WHERE salary > 1000000;
-`
+```
 ### Exercício 4
- `
+ ```
 SELECT COUNT(*) AS quantidade_atores FROM Actor;
 SELECT COUNT(*) AS atrizes FROM Actor WHERE gender = "female";
 SELECT AVG(salary) FROM Actor;
@@ -61,9 +61,9 @@ SELECT MIN(salary) FROM Actor WHERE gender="female";
 SELECT COUNT(*) FROM Actor WHERE gender="female";
 #### d)
 SELECT SUM(salary) FROM Actor; 
-`
+```
 ### Exercício 5
-`
+```
 SELECT * FROM Actor LIMIT 3;
 SELECT * FROM Actor ORDER BY name ASC;
 SELECT * FROM Actor ORDER BY name ASC LIMIT 4;
@@ -87,9 +87,9 @@ LIMIT 3;
 #### e)
 SELECT AVG(salary), gender FROM Actor
 GROUP BY gender;
-`
+```
 ### Exercício 6
-`
+```
 #### a)
 ALTER TABLE Filme ADD data_limite_filme DATE;
 SELECT * FROM Filme;
@@ -110,9 +110,9 @@ SET sinopse = "e ai turubom"
 WHERE id = "001";
 #### 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0
 #### Ele executa a ação mas nada é afetado na tabela pois ele não encontra a id informada
-`
+```
 ### Exercício 7
-`
+```
 SELECT * FROM Filme;
 #### a)
 SELECT COUNT(*) FROM Filme WHERE avaliacao > 7.5;
@@ -129,9 +129,9 @@ SELECT COUNT(*) FROM Filme WHERE data_lancamento > CURDATE();
 SELECT MAX(avaliacao) FROM Filme;
 #### f)
 SELECT MIN(avaliacao) FROM Filme;
-`
+```
 ### Exercício 8
-`
+```
 #### a)
 SELECT * FROM Filme ORDER BY nome;
 #### b)
@@ -140,7 +140,7 @@ SELECT * FROM Filme ORDER BY nome LIMIT 1;
 SELECT * FROM Filme
 ORDER BY avaliacao DESC
 LIMIT 2;
-`
+```
 
 
 
