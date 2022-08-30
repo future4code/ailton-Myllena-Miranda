@@ -1,0 +1,5 @@
+GET http://localhost:3003/usuario/page?page=oii
+
+
+# http://localhost:3003/user?name=Caio
+# http://localhost:3003/usuario?tipo=&ordenacao=DESC
