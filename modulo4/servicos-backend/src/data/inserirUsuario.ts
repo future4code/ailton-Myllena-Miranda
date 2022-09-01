@@ -9,7 +9,7 @@ export async function inserirUsuario(usuarioCadastro: Usuario) {
             bairro: usuarioCadastro.bairro,
             cidade: usuarioCadastro.cidade,
             estado: usuarioCadastro.estado
-        }).into("usuarioCEP")
+        }).into("Endereco")
 
     } catch (error:any) {
         console.log(error)

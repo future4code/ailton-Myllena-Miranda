@@ -5,7 +5,8 @@ import { inserirUsuario } from "../data/inserirUsuario";
 
 export async function criarEndereco(req: Request, res: Response) {
   try {
-    const cep = req.params.cep;
+    const cep = req.query.cep as string;
+    const numero = req.query.numero as string;
 
     if (!cep) {
       res.statusCode = 404;
@@ -20,6 +21,8 @@ export async function criarEndereco(req: Request, res: Response) {
     }
 
     const usuarioCadastro: Usuario = {
+        cep:`${cep}`,
+        numero:`${numero}`,
       bairro: consultaCep.bairro,
       cidade: consultaCep.localidade,
       estado: consultaCep.uf,

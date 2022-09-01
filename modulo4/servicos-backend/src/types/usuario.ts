@@ -1,7 +1,9 @@
 export type Usuario = {
-    logradouro: string
-    bairro: string
-    cidade: string
+    cep: string,
+    logradouro: string,
+    numero:string,
+    bairro: string,
+    cidade: string,
     estado: string
 
 }
